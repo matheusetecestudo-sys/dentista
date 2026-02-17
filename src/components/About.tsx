@@ -5,7 +5,7 @@ const About = () => {
             <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div className="order-2 md:order-1 relative">
                     <img
-                        src="https://images.unsplash.com/photo-1629814986427-4a0b5f5c3b99?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Nossa Clínica"
                         className="rounded-2xl shadow-2xl w-full object-cover h-[500px]"
                     />

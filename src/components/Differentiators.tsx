@@ -44,7 +44,7 @@ const Differentiators = () => {
                 <div className="relative">
                     <div className="absolute inset-0 bg-medical-secondary rounded-2xl transform rotate-3 scale-105 opacity-20"></div>
                     <img
-                        src="https://images.unsplash.com/photo-1629909615184-74f495363b63?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        src="https://images.unsplash.com/photo-1588776814546-f4471b57713d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Tecnologia Odontológica Avançada"
                         className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[500px]"
                     />
