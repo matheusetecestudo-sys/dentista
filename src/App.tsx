@@ -8,6 +8,8 @@ import BeforeAfter from './components/BeforeAfter';
 import Testimonials from './components/Testimonials';
 import About from './components/About';
 import ClinicGallery from './components/ClinicGallery';
+import Team from './components/Team';
+import Journey from './components/Journey';
 import CTA from './components/CTA';
 import FAQ from './components/FAQ';
 import Location from './components/Location';
@@ -27,6 +29,8 @@ function App() {
         <Testimonials />
         <About />
         <ClinicGallery />
+        <Team />
+        <Journey />
         <CTA />
         <FAQ />
         <Location />
