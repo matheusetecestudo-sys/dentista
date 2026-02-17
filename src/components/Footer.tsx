@@ -4,7 +4,7 @@ import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
 const Footer = () => {
     return (
         <footer className="bg-medical-primary text-white py-12 pt-16">
-            <div className="container mx-auto px-6 grid md:grid-cols-4 gap-8 mb-12 border-b border-white/10 pb-12">
+            <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 mb-12 border-b border-white/10 pb-12">
                 <div>
                     <h2 className="text-2xl font-bold mb-4 font-serif">Clínica Odonto<span className="text-medical-secondary">Premium</span></h2>
                     <p className="text-gray-300 leading-relaxed mb-6">
@@ -24,17 +24,6 @@ const Footer = () => {
                         <li><a href="#sobre" className="text-gray-300 hover:text-white transition">Sobre Nós</a></li>
                         <li><a href="#depoimentos" className="text-gray-300 hover:text-white transition">Depoimentos</a></li>
                         <li><a href="#contato" className="text-gray-300 hover:text-white transition">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 className="text-lg font-bold mb-6 text-medical-secondary">Tratamentos</h3>
-                    <ul className="space-y-3">
-                        <li className="text-gray-300 hover:text-white transition cursor-pointer">Implantes</li>
-                        <li className="text-gray-300 hover:text-white transition cursor-pointer">Ortodontia</li>
-                        <li className="text-gray-300 hover:text-white transition cursor-pointer">Lentes de Contato</li>
-                        <li className="text-gray-300 hover:text-white transition cursor-pointer">Clareamento</li>
-                        <li className="text-gray-300 hover:text-white transition cursor-pointer">Harmonização Facial</li>
                     </ul>
                 </div>
 
