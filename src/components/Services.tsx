@@ -1,6 +1,6 @@
 
 import { ArrowRight } from 'lucide-react';
-import { FaTooth, FaTeeth, FaTeethOpen, FaMagic, FaChild, FaNotesMedical, FaSyringe, FaRegSmileBeam, FaMedkit } from 'react-icons/fa';
+import { FaTooth, FaTeeth, FaTeethOpen, FaMagic, FaChild, FaNotesMedical, FaSyringe, FaRegSmileBeam, FaMedkit, FaGem, FaShieldAlt } from 'react-icons/fa';
 import { GiHealthNormal } from 'react-icons/gi';
 
 const treatments = [
@@ -53,6 +53,16 @@ const treatments = [
         title: 'Odontopediatria',
         description: 'Cuidado especializado para bebês e crianças, focando em prevenção e crescimento saudável (livre de traumas).',
         icon: <FaChild className="w-10 h-10 text-medical-secondary" />,
+    },
+    {
+        title: 'Check-up & Limpeza',
+        description: 'Prevenção é o melhor remédio. Profilaxia digital completa para manter sua saúde bucal sempre em dia.',
+        icon: <FaGem className="w-10 h-10 text-medical-primary" />,
+    },
+    {
+        title: 'Bruxismo e DTM',
+        description: 'Tratamento para alívio de dores na face e mandíbula, incluindo placas de proteção e terapias relaxantes.',
+        icon: <FaShieldAlt className="w-10 h-10 text-medical-secondary" />,
     },
 ];
 

@@ -7,6 +7,7 @@ import Differentiators from './components/Differentiators';
 import BeforeAfter from './components/BeforeAfter';
 import Testimonials from './components/Testimonials';
 import About from './components/About';
+import ClinicGallery from './components/ClinicGallery';
 import CTA from './components/CTA';
 import FAQ from './components/FAQ';
 import Location from './components/Location';
@@ -25,6 +26,7 @@ function App() {
         <BeforeAfter />
         <Testimonials />
         <About />
+        <ClinicGallery />
         <CTA />
         <FAQ />
         <Location />
