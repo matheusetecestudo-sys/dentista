@@ -12,11 +12,11 @@ const images = [
         alt: "Sala de Atendimento"
     },
     {
-        src: "https://images.unsplash.com/photo-1516549655169-df83a253836f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         alt: "Equipamentos de Ponta"
     },
     {
-        src: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         alt: "Área de Esterilização"
     }
 ];

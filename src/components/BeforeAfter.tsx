@@ -20,7 +20,7 @@ const cases = [
         id: 3,
         title: 'Clareamento a Laser',
         desc: 'Resultado natural e brilhante.',
-        img: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        img: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     },
 ];
 
