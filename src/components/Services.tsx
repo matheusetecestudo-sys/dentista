@@ -54,7 +54,7 @@ const Services = () => {
                             </div>
                             <h3 className="text-xl font-bold text-medical-primary mb-3">{service.title}</h3>
                             <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                            <a href="https://wa.me/5511999999999" className="inline-flex items-center text-medical-secondary font-semibold hover:text-medical-primary transition-colors gap-2">
+                            <a href="https://wa.me/5511992876219" className="inline-flex items-center text-medical-secondary font-semibold hover:text-medical-primary transition-colors gap-2">
                                 Quero saber mais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </a>
                         </div>

@@ -34,7 +34,7 @@ const Navbar = () => {
                         ))}
                     </nav>
                     <a
-                        href="https://wa.me/5511999999999"
+                        href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20pelo%20site."
                         className="bg-medical-secondary text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition shadow-lg flex items-center gap-2"
                     >
                         Agendar Agora
@@ -59,11 +59,11 @@ const Navbar = () => {
                             {item}
                         </a>
                     ))}
-                    <a href="https://wa.me/5511999999999" className="bg-medical-secondary text-white px-8 py-3 rounded-full font-bold shadow-md w-3/4 text-center">
+                    <a href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." className="bg-medical-secondary text-white px-8 py-3 rounded-full font-bold shadow-md w-3/4 text-center">
                         Agendar Consulta
                     </a>
-                    <a href="tel:+5511999999999" className="flex items-center gap-2 text-medical-primary font-bold">
-                        <Phone size={18} /> (11) 9999-9999
+                    <a href="tel:+5511992876219" className="flex items-center gap-2 text-medical-primary font-bold">
+                        <Phone size={18} /> (11) 99287-6219
                     </a>
                 </div>
             )}
