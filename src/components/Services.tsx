@@ -4,42 +4,42 @@ import { ArrowRight } from 'lucide-react';
 const treatments = [
     {
         title: 'Implantes Dentários',
-        description: 'Recupere sua confiança com a tecnologia mais avançada em reposição dentária. Resultados naturais e permanentes.',
+        description: 'Sorriso completo e seguro com tecnologia avançada de reposição.',
         image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop',
     },
     {
         title: 'Lentes de Contato',
-        description: 'Transforme seu sorriso com facetas ultrafinas de porcelana. O segredo dos sorrisos das estrelas ao seu alcance.',
+        description: 'Estética de alto padrão para um sorriso perfeito e natural.',
         image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop',
     },
     {
         title: 'Invisalign',
-        description: 'Corrija seus dentes com alinhadores invisíveis e removíveis. Conforto e discrição durante todo o tratamento.',
+        description: 'Alinhadores invisíveis e removíveis para máxima discrição.',
         image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2070&auto=format&fit=crop',
     },
     {
         title: 'Clareamento Dental',
-        description: 'Dentes brancos e radiantes em poucas sessões. Protocolos exclusivos que garantem brilho sem sensibilidade.',
+        description: 'Dentes brancos e radiantes com protocolos exclusivos e seguros.',
         image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1931&auto=format&fit=crop',
     },
     {
         title: 'Prótese Dentária',
-        description: 'Reabilitação oral completa com materiais de alta performance. Devolva a função mastigatória e a estética.',
+        description: 'Recupere a função mastigatória e a beleza do seu sorriso.',
         image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop',
     },
     {
         title: 'Harmonização Facial',
-        description: 'Equilíbrio e beleza para o seu rosto. Procedimentos modernos que realçam sua melhor versão de forma sutil.',
+        description: 'Realce sua beleza natural com procedimentos sutis e modernos.',
         image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc206e?q=80&w=2070&auto=format&fit=crop',
     },
     {
         title: 'Endodontia (Canal)',
-        description: 'Tratamento de precisão para salvar seus dentes naturais. Tecnologia indolor e recuperação rápida.',
+        description: 'Tratamento de precisão indolor para salvar seus dentes.',
         image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2070&auto=format&fit=crop',
     },
     {
         title: 'Check-up & Limpeza',
-        description: 'Prevenção avançada para um sorriso sempre saudável. O cuidado essencial que sua saúde merece.',
+        description: 'Prevenção essencial para manter sua saúde bucal sempre em dia.',
         image: 'https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=2070&auto=format&fit=crop',
     },
 ];
@@ -73,21 +73,21 @@ const Services = () => {
                             </div>
 
                             {/* 50% Content Section */}
-                            <div className="p-8 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold text-medical-primary mb-3 leading-tight">
+                            <div className="p-6 flex flex-col flex-grow">
+                                <h3 className="text-lg font-bold text-medical-primary mb-2 leading-tight">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                                <p className="text-gray-600 mb-4 text-xs leading-relaxed flex-grow">
                                     {service.description}
                                 </p>
                                 <a 
                                     href="https://wa.me/5511992876219" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-between bg-medical-secondary/10 text-medical-secondary px-5 py-3 rounded-xl font-bold hover:bg-medical-secondary hover:text-white transition-all duration-300 group/btn"
+                                    className="inline-flex items-center justify-between bg-medical-secondary/10 text-medical-secondary px-4 py-2.5 rounded-xl font-bold hover:bg-medical-secondary hover:text-white transition-all duration-300 group/btn text-sm"
                                 >
                                     Agendar Agora
-                                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                 </a>
                             </div>
                         </div>
