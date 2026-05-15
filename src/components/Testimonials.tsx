@@ -73,11 +73,11 @@ const Testimonials = () => {
                             */}
                             <div className="hidden md:contents">
                                 {reviews.map((review, index) => (
-                                    <TestimonialCard key={index} review={review} isCurrent={index === currentIndex} />
+                                    <TestimonialCard key={index} review={review} />
                                 ))}
                             </div>
                             <div className="md:hidden flex justify-center">
-                                <TestimonialCard review={reviews[currentIndex]} isCurrent={true} />
+                                <TestimonialCard review={reviews[currentIndex]} />
                             </div>
                         </motion.div>
                     </AnimatePresence>
@@ -96,8 +96,8 @@ const Testimonials = () => {
     );
 };
 
-const TestimonialCard = ({ review, isCurrent }: { review: any, isCurrent: boolean }) => (
-    <div className={`bg-white p-10 rounded-[2.5rem] relative border-2 transition-all duration-700 h-full flex flex-col ${isCurrent ? 'border-medical-secondary shadow-2xl scale-100 z-10' : 'border-medical-primary/5 shadow-sm scale-95 opacity-80'}`}>
+const TestimonialCard = ({ review }: { review: any }) => (
+    <div className="bg-white p-10 rounded-[2.5rem] relative border-2 border-medical-secondary/40 hover:border-medical-secondary transition-all duration-500 h-full flex flex-col shadow-lg hover:shadow-2xl">
         <div className="absolute top-8 right-8 text-medical-secondary/20 group-hover:text-medical-secondary/40 transition-colors">
             <Quote size={48} />
         </div>
