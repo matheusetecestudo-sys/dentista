@@ -1,5 +1,5 @@
 
-import { Phone, Calendar, Star, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
 
 const Hero = () => {
     return (
