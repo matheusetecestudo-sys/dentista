@@ -1,5 +1,4 @@
-
-import { MessageCircle, PhoneCall } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import WhatsAppGuide from './WhatsAppGuide';
 
 const CTA = () => {
@@ -27,18 +26,18 @@ const CTA = () => {
                                 href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-green-500 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:bg-green-600 transition transform hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto animate-pulse"
+                                className="bg-green-500 text-white font-bold py-4 px-8 rounded-xl shadow-xl hover:bg-green-600 transition transform hover:-translate-y-1 flex items-center justify-center gap-3 w-full sm:w-auto group"
                             >
-                                <MessageCircle size={24} />
                                 Chamar no WhatsApp
+                                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </a>
 
                             <a
                                 href="tel:+5511992876219"
-                                className="bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white/10 transition w-full sm:w-auto flex items-center justify-center gap-3"
+                                className="bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-xl hover:bg-white/10 transition w-full sm:w-auto flex items-center justify-center gap-3 group"
                             >
-                                <PhoneCall size={24} />
-                                Ligar (11) 99287-6219
+                                Ligar Agora
+                                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </a>
                         </div>
 

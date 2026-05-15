@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +36,10 @@ const Navbar = () => {
                         </a>
                         <a
                             href="https://wa.me/5511992876219"
-                            className="bg-medical-secondary text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:bg-white hover:text-medical-secondary transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
+                            className="bg-medical-secondary text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:bg-white hover:text-medical-secondary transition-all duration-300 transform hover:-translate-y-0.5 text-sm flex items-center gap-2 group/nav"
                         >
                             Agendar Consulta
+                            <ArrowRight size={16} className="group-hover/nav:translate-x-1 transition-transform" />
                         </a>
                     </div>
                 </div>
@@ -61,8 +62,12 @@ const Navbar = () => {
                             {item}
                         </a>
                     ))}
-                    <a href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." className="bg-medical-secondary text-white px-8 py-3 rounded-full font-bold shadow-md w-3/4 text-center">
+                    <a 
+                        href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." 
+                        className="bg-medical-secondary text-white px-8 py-3 rounded-full font-bold shadow-md w-3/4 text-center flex items-center justify-center gap-2"
+                    >
                         Agendar Consulta
+                        <ArrowRight size={18} />
                     </a>
                     <a href="tel:11992876219" className="flex items-center gap-2 text-medical-primary font-bold">
                         <Phone size={18} /> (11) 99287-6219

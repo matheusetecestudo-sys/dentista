@@ -1,4 +1,6 @@
 
+import { ArrowRight } from 'lucide-react';
+
 const About = () => {
     return (
         <section className="bg-white py-20" id="sobre">
@@ -37,8 +39,8 @@ const About = () => {
                     </div>
 
                     <div className="mt-10">
-                        <a href="#contato" className="text-medical-secondary font-bold hover:text-medical-primary transition-colors flex items-center gap-2">
-                            Conheça nossa estrutura e equipe &rarr;
+                        <a href="#contato" className="text-medical-secondary font-bold hover:text-medical-primary transition-colors flex items-center gap-2 group">
+                            Conheça nossa estrutura e equipe <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                     </div>
                 </div>

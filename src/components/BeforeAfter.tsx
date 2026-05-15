@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { ZoomIn, X } from 'lucide-react';
+import { ZoomIn, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const cases = [
@@ -82,8 +81,12 @@ const BeforeAfter = () => {
                                             <h3 className="text-2xl font-bold text-medical-primary mb-2">{c.title}</h3>
                                             <p className="text-gray-600 mb-4">{c.desc}</p>
                                             <div className="flex gap-4">
-                                                <a href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Vi%20esse%20resultado%20no%20site%20e%20gostaria%20de%20saber%20mais." className="flex-1 bg-medical-secondary text-white font-bold py-3 text-center rounded-lg hover:bg-opacity-90 transition">
+                                                <a 
+                                                    href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Vi%20esse%20resultado%20no%20site%20e%20gostaria%20de%20saber%20mais." 
+                                                    className="flex-1 bg-medical-secondary text-white font-bold py-3 text-center rounded-lg hover:bg-opacity-90 transition flex items-center justify-center gap-2 group/btn"
+                                                >
                                                     Quero esse resultado
+                                                    <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                                                 </a>
                                             </div>
                                         </div>
