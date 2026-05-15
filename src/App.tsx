@@ -1,7 +1,6 @@
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import GoalSelector from './components/GoalSelector';
 import Services from './components/Services';
 import Differentiators from './components/Differentiators';
 import BeforeAfter from './components/BeforeAfter';
@@ -22,7 +21,6 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <GoalSelector />
         <Services />
         <Differentiators />
         <BeforeAfter />
