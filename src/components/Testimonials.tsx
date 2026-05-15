@@ -41,7 +41,7 @@ const Testimonials = () => {
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-medical-primary mt-4">Depoimentos que inspiram confiança</h2>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 md:hidden">
                         <button 
                             onClick={prev}
                             className="w-14 h-14 rounded-full border-2 border-medical-primary/20 text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white hover:border-medical-primary transition-all duration-500 shadow-sm active:scale-90"

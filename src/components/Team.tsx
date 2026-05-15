@@ -44,7 +44,7 @@ const Team = () => {
                             Nossa equipe é formada por profissionais com títulos de mestrado e doutorado, em constante atualização técnica.
                         </p>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 md:hidden">
                         <button 
                             onClick={prev}
                             className="w-12 h-12 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all duration-300 shadow-lg"
