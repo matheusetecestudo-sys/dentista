@@ -41,36 +41,18 @@ const Testimonials = () => {
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-medical-primary mt-4">Depoimentos que inspiram confiança</h2>
                     </div>
-                    <div className="flex gap-4 md:hidden">
-                        <button 
-                            onClick={prev}
-                            className="w-14 h-14 rounded-full border-2 border-medical-primary/20 text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white hover:border-medical-primary transition-all duration-500 shadow-sm active:scale-90"
-                        >
-                            <ChevronLeft size={28} />
-                        </button>
-                        <button 
-                            onClick={next}
-                            className="w-14 h-14 rounded-full border-2 border-medical-primary/20 text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white hover:border-medical-primary transition-all duration-500 shadow-sm active:scale-90"
-                        >
-                            <ChevronRight size={28} />
-                        </button>
-                    </div>
                 </div>
 
-                <div className="relative min-h-[400px]">
+                <div className="relative">
                     <AnimatePresence mode="wait">
                         <motion.div 
                             key={currentIndex}
-                            initial={{ opacity: 0, x: 100, filter: 'blur(10px)' }}
+                            initial={{ opacity: 0, x: 50, filter: 'blur(10px)' }}
                             animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-                            exit={{ opacity: 0, x: -100, filter: 'blur(10px)' }}
-                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            exit={{ opacity: 0, x: -50, filter: 'blur(10px)' }}
+                            transition={{ duration: 0.4, ease: "circOut" }}
                             className="grid grid-cols-1 md:grid-cols-3 gap-8"
                         >
-                            {/* Layout Logic:
-                                Desktop: Show all 3
-                                Mobile: Show current based on index
-                            */}
                             <div className="hidden md:contents">
                                 {reviews.map((review, index) => (
                                     <TestimonialCard key={index} review={review} />
@@ -81,6 +63,22 @@ const Testimonials = () => {
                             </div>
                         </motion.div>
                     </AnimatePresence>
+                </div>
+
+                {/* Arrows BELOW the cards */}
+                <div className="flex justify-center gap-6 mt-12 md:hidden">
+                    <button 
+                        onClick={prev}
+                        className="w-16 h-16 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all duration-300 shadow-xl active:scale-90"
+                    >
+                        <ChevronLeft size={32} />
+                    </button>
+                    <button 
+                        onClick={next}
+                        className="w-16 h-16 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all duration-300 shadow-xl active:scale-90"
+                    >
+                        <ChevronRight size={32} />
+                    </button>
                 </div>
 
                 {/* Progress Bar instead of dots for elite look */}

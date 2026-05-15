@@ -44,30 +44,16 @@ const Team = () => {
                             Com mais de 15 anos de excelência, unimos tecnologia de ponta a um corpo clínico altamente especializado para transformar sua experiência odontológica em algo único e humano.
                         </p>
                     </div>
-                    <div className="flex gap-4 md:hidden">
-                        <button 
-                            onClick={prev}
-                            className="w-12 h-12 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all duration-300 shadow-lg"
-                        >
-                            <ChevronLeft size={24} />
-                        </button>
-                        <button 
-                            onClick={next}
-                            className="w-12 h-12 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all duration-300 shadow-lg"
-                        >
-                            <ChevronRight size={24} />
-                        </button>
-                    </div>
                 </div>
 
                 <div className="relative">
                     <AnimatePresence mode="wait">
                         <motion.div 
                             key={currentIndex}
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -50 }}
-                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                            animate={{ opacity: 1, x: 0, scale: 1 }}
+                            exit={{ opacity: 0, x: -50, scale: 0.95 }}
+                            transition={{ duration: 0.4, ease: "circOut" }}
                             className="grid grid-cols-1 md:grid-cols-3 gap-8"
                         >
                             <div className="hidden md:contents">
@@ -82,14 +68,20 @@ const Team = () => {
                     </AnimatePresence>
                 </div>
 
-                {/* Dots for mobile */}
-                <div className="flex justify-center gap-2 mt-8 md:hidden">
-                    {team.map((_, i) => (
-                        <div 
-                            key={i} 
-                            className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'w-8 bg-medical-secondary' : 'w-2 bg-gray-300'}`}
-                        />
-                    ))}
+                {/* Arrows BELOW the cards */}
+                <div className="flex justify-center gap-6 mt-12 md:hidden">
+                    <button 
+                        onClick={prev}
+                        className="w-16 h-16 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all shadow-xl active:scale-90"
+                    >
+                        <ChevronLeft size={32} />
+                    </button>
+                    <button 
+                        onClick={next}
+                        className="w-16 h-16 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all shadow-xl active:scale-90"
+                    >
+                        <ChevronRight size={32} />
+                    </button>
                 </div>
             </div>
         </section>
