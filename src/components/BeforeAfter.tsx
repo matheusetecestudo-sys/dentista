@@ -141,4 +141,3 @@ const CaseCard = ({ item, onClick }: { item: any, onClick: () => void }) => (
 );
 
 export default BeforeAfter;
-After;
