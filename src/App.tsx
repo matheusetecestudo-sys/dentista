@@ -8,7 +8,7 @@ import Testimonials from './components/Testimonials';
 import About from './components/About';
 import ClinicGallery from './components/ClinicGallery';
 import Team from './components/Team';
-import Journey from './components/Journey';
+import Experience from './components/Experience';
 import CTA from './components/CTA';
 import FAQ from './components/FAQ';
 import Location from './components/Location';
@@ -28,7 +28,7 @@ function App() {
         <Testimonials />
         <ClinicGallery />
         <About />
-        <Journey />
+        <Experience />
         <FAQ />
         <CTA />
         <Location />
