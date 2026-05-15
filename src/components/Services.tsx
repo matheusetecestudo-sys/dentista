@@ -46,7 +46,7 @@ const treatments = [
 
 const Services = () => {
     return (
-        <section className="bg-medical-light py-20" id="tratamentos">
+        <section className="bg-medical-light py-12 md:py-20" id="tratamentos">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Nossos Serviços</span>
@@ -63,7 +63,7 @@ const Services = () => {
                             className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col group"
                         >
                             {/* 50% Image Section */}
-                            <div className="h-64 overflow-hidden relative">
+                            <div className="h-40 md:h-64 overflow-hidden relative">
                                 <img 
                                     src={service.image} 
                                     alt={service.title} 
@@ -73,21 +73,21 @@ const Services = () => {
                             </div>
 
                             {/* 50% Content Section */}
-                            <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-lg font-bold text-medical-primary mb-2 leading-tight">
+                            <div className="p-4 md:p-6 flex flex-col flex-grow">
+                                <h3 className="text-base md:text-lg font-bold text-medical-primary mb-1 md:mb-2 leading-tight">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 mb-4 text-xs leading-relaxed flex-grow">
+                                <p className="text-gray-600 mb-3 md:mb-4 text-[10px] md:text-xs leading-relaxed flex-grow">
                                     {service.description}
                                 </p>
                                 <a 
                                     href="https://wa.me/5511992876219" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-between bg-medical-secondary/10 text-medical-secondary px-4 py-2.5 rounded-xl font-bold hover:bg-medical-secondary hover:text-white transition-all duration-300 group/btn text-sm"
+                                    className="inline-flex items-center justify-between bg-medical-secondary/10 text-medical-secondary px-3 py-2 md:px-4 md:py-2.5 rounded-xl font-bold hover:bg-medical-secondary hover:text-white transition-all duration-300 group/btn text-[10px] md:text-sm"
                                 >
-                                    Agendar Agora
-                                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                    Agendar
+                                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
                                 </a>
                             </div>
                         </div>
