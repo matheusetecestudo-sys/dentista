@@ -23,16 +23,16 @@ const Hero = () => {
                     </div>
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                        Sorriso saudável e estético com <span className="text-medical-secondary">tecnologia de ponta</span>
+                        A Engenharia do <span className="text-medical-secondary">Sorriso Perfeito</span>: Tecnologia de Elite
                     </h1>
 
                     <p className="text-lg md:text-xl text-gray-200 max-w-xl">
-                        Transforme sua autoestima com tratamentos odontológicos avançados e personalizados em um ambiente acolhedor e seguro.
+                        Protocolos exclusivos e tecnologia de alta performance para redefinir sua imagem e transformar sua saúde bucal em uma experiência de luxo.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <a
-                            href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                            href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20elite."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-medical-secondary text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-[#25a094] transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2"
@@ -42,11 +42,13 @@ const Hero = () => {
                         </a>
 
                         <a
-                            href="tel:+5511992876219"
-                            className="bg-transparent border-2 border-white text-white font-medium py-4 px-8 rounded-full hover:bg-white hover:text-medical-primary transition text-center flex items-center justify-center gap-2"
+                            href="https://wa.me/5511992876219?text=EMERGENCIA!%20Estou%20com%20dor%20e%20preciso%20de%20atendimento%20urgente."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-red-500/20 backdrop-blur-md border-2 border-red-500 text-red-500 font-bold py-4 px-8 rounded-full hover:bg-red-500 hover:text-white transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2"
                         >
                             <Phone className="w-5 h-5" />
-                            Ligar Agora
+                            Emergência 24h
                         </a>
                     </div>
 

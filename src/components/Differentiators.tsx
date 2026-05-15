@@ -13,18 +13,18 @@ const Differentiators = () => {
             <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
                 <div>
                     <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Por que nos escolher?</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Diferenciais que transformam sua experiência</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Padrão Ouro em Performance Odontológica</h2>
                     <p className="text-gray-300 mb-8 text-lg">
-                        Não somos apenas uma clínica, somos parceiros na construção do seu melhor sorriso. Cada detalhe foi pensado para seu conforto e segurança.
+                        Unimos a precisão da engenharia moderna com a arte da estética dental. Protocolos exclusivos desenhados para quem não aceita nada menos que a perfeição.
                     </p>
 
                     <ul className="space-y-4">
                         {[
-                            "Tecnologia 3D de última geração para diagnósticos precisos.",
-                            "Atendimento 100% personalizado focado nas suas necessidades.",
-                            "Ambiente climatizado, moderno e acolhedor (SPA odontológico).",
-                            "Especialistas renomados com atualização constante.",
-                            "Resultados estéticos naturais e harmoniosos.",
+                            "Scanner Intraoral 3D: Diga adeus às moldagens desconfortáveis.",
+                            "Protocolo de Sedação Consciente para uma experiência sem ansiedade.",
+                            "Planejamento Digital do Sorriso (DSD) antes de começar.",
+                            "Equipe de especialistas com formação internacional.",
+                            "Laboratório próprio para entregas em tempo recorde.",
                         ].map((item, idx) => (
                             <li key={idx} className="flex items-start gap-3">
                                 <CheckCircle2 className="w-6 h-6 text-medical-secondary flex-shrink-0 mt-1" />
