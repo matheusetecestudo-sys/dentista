@@ -1,9 +1,11 @@
 
-import { Star } from 'lucide-react';
+import { useState } from 'react';
+import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const reviews = [
     {
-        name: 'Ana Paulo Silva',
+        name: 'Ana Paula Silva',
         city: 'São Paulo, SP',
         text: 'Profissionais incríveis! Fiquei muito satisfeita com meu clareamento, resultado super natural. O atendimento é nota 10.',
         avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80',
@@ -23,44 +25,106 @@ const reviews = [
 ];
 
 const Testimonials = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const next = () => setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    const prev = () => setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+
     return (
-        <section className="bg-white py-20" id="depoimentos">
+        <section className="bg-white py-20 overflow-hidden" id="depoimentos">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Depoimentos</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-medical-primary mt-2">O que nossos pacientes dizem</h2>
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div className="max-w-xl">
+                        <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm flex items-center gap-2">
+                            <div className="w-8 h-[2px] bg-medical-secondary"></div>
+                            Voz dos Pacientes
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-medical-primary mt-4">Depoimentos que inspiram confiança</h2>
+                    </div>
+                    <div className="flex gap-4">
+                        <button 
+                            onClick={prev}
+                            className="w-14 h-14 rounded-full border-2 border-medical-primary/20 text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white hover:border-medical-primary transition-all duration-500 shadow-sm active:scale-90"
+                        >
+                            <ChevronLeft size={28} />
+                        </button>
+                        <button 
+                            onClick={next}
+                            className="w-14 h-14 rounded-full border-2 border-medical-primary/20 text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white hover:border-medical-primary transition-all duration-500 shadow-sm active:scale-90"
+                        >
+                            <ChevronRight size={28} />
+                        </button>
+                    </div>
                 </div>
 
-                <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar">
-                    {reviews.map((review, index) => (
-                        <div key={index} className="bg-medical-light p-8 rounded-2xl relative shadow-sm hover:shadow-md transition-shadow min-w-[85%] md:min-w-0 snap-center">
-                            <div className="absolute top-0 right-0 p-4 opacity-10">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" className="text-medical-primary">
-                                    <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.01691 21L5.01691 18C5.01691 16.8954 5.91234 16 7.01691 16H10.0169C10.5692 16 11.0169 15.5523 11.0169 15V9C11.0169 8.44772 10.5692 8 10.0169 8H6.01691C5.46462 8 5.01691 8.44772 5.01691 9V11C5.01691 11.5523 4.56919 12 4.01691 12H3.01691V5H13.0169V15C13.0169 18.3137 10.3306 21 7.01691 21H5.01691Z" />
-                                </svg>
-                            </div>
-
-                            <div className="flex items-center gap-4 mb-6">
-                                <img src={review.avatar} alt={review.name} className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm" />
-                                <div>
-                                    <h4 className="font-bold text-medical-primary">{review.name}</h4>
-                                    <p className="text-sm text-gray-500">{review.city}</p>
-                                </div>
-                            </div>
-
-                            <p className="text-gray-600 italic mb-6">"{review.text}"</p>
-
-                            <div className="flex gap-1 text-yellow-400">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} size={18} fill="currentColor" />
+                <div className="relative min-h-[400px]">
+                    <AnimatePresence mode="wait">
+                        <motion.div 
+                            key={currentIndex}
+                            initial={{ opacity: 0, x: 100, filter: 'blur(10px)' }}
+                            animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                            exit={{ opacity: 0, x: -100, filter: 'blur(10px)' }}
+                            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                        >
+                            {/* Layout Logic:
+                                Desktop: Show all 3
+                                Mobile: Show current based on index
+                            */}
+                            <div className="hidden md:contents">
+                                {reviews.map((review, index) => (
+                                    <TestimonialCard key={index} review={review} isCurrent={index === currentIndex} />
                                 ))}
                             </div>
-                        </div>
-                    ))}
+                            <div className="md:hidden flex justify-center">
+                                <TestimonialCard review={reviews[currentIndex]} isCurrent={true} />
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* Progress Bar instead of dots for elite look */}
+                <div className="mt-12 w-full max-w-xs mx-auto bg-gray-100 h-1.5 rounded-full overflow-hidden hidden md:block">
+                    <motion.div 
+                        className="h-full bg-medical-secondary"
+                        animate={{ width: `${((currentIndex + 1) / reviews.length) * 100}%` }}
+                        transition={{ duration: 0.5 }}
+                    />
                 </div>
             </div>
         </section>
     );
 };
+
+const TestimonialCard = ({ review, isCurrent }: { review: any, isCurrent: boolean }) => (
+    <div className={`bg-white p-10 rounded-[2.5rem] relative border-2 transition-all duration-700 h-full flex flex-col ${isCurrent ? 'border-medical-secondary shadow-2xl scale-100 z-10' : 'border-medical-primary/5 shadow-sm scale-95 opacity-80'}`}>
+        <div className="absolute top-8 right-8 text-medical-secondary/20 group-hover:text-medical-secondary/40 transition-colors">
+            <Quote size={48} />
+        </div>
+
+        <div className="flex items-center gap-5 mb-8">
+            <div className="relative">
+                <img src={review.avatar} alt={review.name} className="w-18 h-18 rounded-2xl object-cover shadow-xl" />
+                <div className="absolute -bottom-2 -right-2 bg-medical-secondary text-white p-1.5 rounded-lg shadow-lg">
+                    <Star size={14} fill="currentColor" />
+                </div>
+            </div>
+            <div>
+                <h4 className="font-extrabold text-medical-primary text-lg">{review.name}</h4>
+                <p className="text-sm font-medium text-medical-secondary">{review.city}</p>
+            </div>
+        </div>
+
+        <p className="text-gray-600 italic text-lg leading-relaxed flex-grow">
+            "{review.text}"
+        </p>
+
+        <div className="mt-8 flex gap-1.5">
+            {[...Array(5)].map((_, i) => (
+                <Star key={i} size={20} className="text-yellow-400 fill-current" />
+            ))}
+        </div>
+    </div>
+);
 
 export default Testimonials;

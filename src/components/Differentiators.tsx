@@ -1,5 +1,5 @@
 
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Award, Stethoscope, Droplet, CheckCircle } from 'lucide-react';
 
 const Differentiators = () => {
     return (
@@ -32,6 +32,34 @@ const Differentiators = () => {
                             </li>
                         ))}
                     </ul>
+
+                    {/* Integrated Trust Icons */}
+                    <div className="grid grid-cols-2 gap-6 mt-12 pt-12 border-t border-white/10">
+                        <div className="flex items-center gap-4 group/item">
+                            <div className="bg-white/10 p-3 rounded-xl group-hover/item:bg-medical-secondary group-hover/item:text-white transition-all duration-300">
+                                <Award className="w-6 h-6" />
+                            </div>
+                            <span className="text-sm font-bold">Profissionais<br />Certificados</span>
+                        </div>
+                        <div className="flex items-center gap-4 group/item">
+                            <div className="bg-white/10 p-3 rounded-xl group-hover/item:bg-medical-secondary group-hover/item:text-white transition-all duration-300">
+                                <Stethoscope className="w-6 h-6" />
+                            </div>
+                            <span className="text-sm font-bold">Equipamentos<br />Modernos</span>
+                        </div>
+                        <div className="flex items-center gap-4 group/item">
+                            <div className="bg-white/10 p-3 rounded-xl group-hover/item:bg-medical-secondary group-hover/item:text-white transition-all duration-300">
+                                <Droplet className="w-6 h-6" />
+                            </div>
+                            <span className="text-sm font-bold">Biossegurança<br />Rigorosa</span>
+                        </div>
+                        <div className="flex items-center gap-4 group/item">
+                            <div className="bg-white/10 p-3 rounded-xl group-hover/item:bg-medical-secondary group-hover/item:text-white transition-all duration-300">
+                                <CheckCircle className="w-6 h-6" />
+                            </div>
+                            <span className="text-sm font-bold">Atendimento<br />Humanizado</span>
+                        </div>
+                    </div>
 
                     <div className="mt-10">
                         <a href="#contato" className="bg-white text-medical-primary font-bold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 inline-flex items-center gap-2 group">

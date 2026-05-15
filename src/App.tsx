@@ -1,7 +1,6 @@
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Trust from './components/Trust';
 import GoalSelector from './components/GoalSelector';
 import Services from './components/Services';
 import Differentiators from './components/Differentiators';
@@ -23,7 +22,6 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Trust />
         <GoalSelector />
         <Services />
         <Differentiators />

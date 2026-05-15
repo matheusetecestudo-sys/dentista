@@ -1,6 +1,7 @@
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
     {
@@ -22,43 +23,85 @@ const images = [
 ];
 
 const ClinicGallery = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const next = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+    const prev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
     return (
-        <section className="bg-white py-20" ref={ref}>
+        <section className="bg-white py-20 overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Nossa Estrutura</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-medical-primary mt-2">Tecnologia e Conforto</h2>
-                    <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                        Um ambiente pensado nos mínimos detalhes para que sua experiência seja tranquila e segura.
-                    </p>
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Nossa Estrutura</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-medical-primary mt-2">Tecnologia e Conforto</h2>
+                        <p className="text-gray-600 mt-4 max-w-2xl">
+                            Um ambiente pensado nos mínimos detalhes para que sua experiência seja tranquila e segura.
+                        </p>
+                    </div>
+                    <div className="flex gap-4">
+                        <button 
+                            onClick={prev}
+                            className="w-12 h-12 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all duration-300 shadow-lg"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button 
+                            onClick={next}
+                            className="w-12 h-12 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all duration-300 shadow-lg"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {images.map((img, index) => (
-                        <motion.div
-                            key={index}
-                            className="relative overflow-hidden group rounded-xl h-64 shadow-lg cursor-pointer"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                <div className="relative">
+                    <AnimatePresence mode="wait">
+                        <motion.div 
+                            key={currentIndex}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 1.05 }}
+                            transition={{ duration: 0.4 }}
+                            className="grid grid-cols-1 md:grid-cols-4 gap-4"
                         >
-                            <img
-                                src={img.src}
-                                alt={img.alt}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <p className="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{img.alt}</p>
+                            <div className="hidden md:contents">
+                                {images.map((img, index) => (
+                                    <GalleryImage key={index} img={img} />
+                                ))}
+                            </div>
+                            <div className="md:hidden">
+                                <GalleryImage img={images[currentIndex]} />
                             </div>
                         </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* Dots for mobile */}
+                <div className="flex justify-center gap-2 mt-8 md:hidden">
+                    {images.map((_, i) => (
+                        <div 
+                            key={i} 
+                            className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'w-8 bg-medical-secondary' : 'w-2 bg-gray-300'}`}
+                        />
                     ))}
                 </div>
             </div>
         </section>
     );
 };
+
+const GalleryImage = ({ img }: { img: any }) => (
+    <div className="relative overflow-hidden group rounded-2xl h-80 shadow-lg cursor-pointer border-2 border-medical-primary/5">
+        <img
+            src={img.src}
+            alt={img.alt}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <p className="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{img.alt}</p>
+        </div>
+    </div>
+);
 
 export default ClinicGallery;
