@@ -37,9 +37,9 @@ const Team = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar">
                     {team.map((member, index) => (
-                        <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group border border-gray-100">
+                        <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group border border-gray-100 min-w-[85%] md:min-w-0 snap-center">
                             <div className="relative overflow-hidden h-80">
                                 <img
                                     src={member.image}
