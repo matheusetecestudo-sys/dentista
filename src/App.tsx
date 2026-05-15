@@ -22,15 +22,15 @@ function App() {
       <main>
         <Hero />
         <Services />
-        <Differentiators />
         <BeforeAfter />
-        <Testimonials />
-        <About />
-        <ClinicGallery />
+        <Differentiators />
         <Team />
+        <Testimonials />
+        <ClinicGallery />
+        <About />
         <Journey />
-        <CTA />
         <FAQ />
+        <CTA />
         <Location />
       </main>
       <Footer />
