@@ -38,9 +38,20 @@ const Footer = () => {
                             <Mail size={20} className="text-medical-secondary flex-shrink-0" />
                             contato@odontopremium.com.br
                         </li>
-                        <li className="text-gray-400 text-sm mt-4">
-                            Av. Paulista, 1000 - Cj. 202<br />
-                            Bela Vista, São Paulo - SP
+                        <li className="text-gray-300 flex flex-col gap-2">
+                            <span className="text-gray-400 text-sm">Endereço:</span>
+                            <p>
+                                Av. Paulista, 1000 - Cj. 202<br />
+                                Bela Vista, São Paulo - SP
+                            </p>
+                            <a 
+                                href="https://maps.google.com" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="text-medical-secondary text-sm font-bold hover:underline"
+                            >
+                                Ver no Google Maps &rarr;
+                            </a>
                         </li>
                     </ul>
                 </div>

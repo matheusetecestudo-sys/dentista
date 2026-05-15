@@ -29,14 +29,14 @@ const Experience = () => {
     return (
         <section className="py-20 bg-medical-primary text-white overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
                     <motion.div 
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-medical-secondary font-bold uppercase tracking-widest text-sm">A Experiência Elite</span>
+                        <span className="text-medical-secondary font-bold uppercase tracking-widest text-sm">Experiência & Estrutura</span>
                         <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-8 leading-tight">
                             Muito além de uma consulta, um momento de <span className="text-medical-secondary">bem-estar.</span>
                         </h2>
@@ -58,22 +58,20 @@ const Experience = () => {
                     </motion.div>
 
                     <motion.div 
-                        className="relative"
+                        className="grid grid-cols-2 gap-4"
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white/10">
-                            <img 
-                                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                alt="Experiência de Luxo" 
-                                className="w-full h-[600px] object-cover"
-                            />
+                        <div className="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-64 object-cover shadow-2xl" />
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-48 object-cover shadow-2xl" />
                         </div>
-                        {/* Decorative circles */}
-                        <div className="absolute -top-12 -right-12 w-64 h-64 bg-medical-secondary rounded-full blur-3xl opacity-20 -z-10"></div>
-                        <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-20 -z-10"></div>
+                        <div className="space-y-4 pt-8">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-48 object-cover shadow-2xl" />
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-64 object-cover shadow-2xl" />
+                        </div>
                     </motion.div>
                 </div>
             </div>

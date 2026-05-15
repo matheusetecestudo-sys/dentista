@@ -5,13 +5,9 @@ import Services from './components/Services';
 import Differentiators from './components/Differentiators';
 import BeforeAfter from './components/BeforeAfter';
 import Testimonials from './components/Testimonials';
-import About from './components/About';
-import ClinicGallery from './components/ClinicGallery';
 import Team from './components/Team';
 import Experience from './components/Experience';
 import CTA from './components/CTA';
-import FAQ from './components/FAQ';
-import Location from './components/Location';
 import Footer from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 
@@ -26,12 +22,8 @@ function App() {
         <Differentiators />
         <Team />
         <Testimonials />
-        <ClinicGallery />
-        <About />
         <Experience />
-        <FAQ />
         <CTA />
-        <Location />
       </main>
       <Footer />
       <WhatsAppButton />

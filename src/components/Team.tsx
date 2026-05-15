@@ -37,11 +37,11 @@ const Team = () => {
         <section className="bg-medical-light py-20 overflow-hidden" id="equipe">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                    <div>
-                        <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Corpo Clínico</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-medical-primary mt-2">Especialistas dedicados a você</h2>
-                        <p className="text-gray-600 mt-4 max-w-2xl">
-                            Nossa equipe é formada por profissionais com títulos de mestrado e doutorado, em constante atualização técnica.
+                    <div className="max-w-2xl">
+                        <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Nossa História & Equipe</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-medical-primary mt-2">Tradição e Inovação em cada detalhe</h2>
+                        <p className="text-gray-600 mt-4 leading-relaxed">
+                            Com mais de 15 anos de excelência, unimos tecnologia de ponta a um corpo clínico altamente especializado para transformar sua experiência odontológica em algo único e humano.
                         </p>
                     </div>
                     <div className="flex gap-4 md:hidden">
