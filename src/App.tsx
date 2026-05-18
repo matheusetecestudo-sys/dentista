@@ -2,11 +2,11 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Differentiators from './components/Differentiators';
+import Clinic from './components/Clinic';
+import FAQ from './components/FAQ';
 import BeforeAfter from './components/BeforeAfter';
 import Testimonials from './components/Testimonials';
 import Team from './components/Team';
-import Experience from './components/Experience';
 import CTA from './components/CTA';
 import Location from './components/Location';
 import Footer from './components/Footer';
@@ -20,10 +20,10 @@ function App() {
         <Hero />
         <Services />
         <BeforeAfter />
-        <Differentiators />
+        <Clinic />
         <Team />
         <Testimonials />
-        <Experience />
+        <FAQ />
         <Location />
         <CTA />
       </main>
