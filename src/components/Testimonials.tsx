@@ -38,9 +38,9 @@ const Testimonials = () => {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-teal-600 font-bold uppercase tracking-[0.2em] text-sm flex items-center gap-3"
+                            className="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm flex items-center gap-3"
                         >
-                            <div className="w-10 h-[2px] bg-teal-600"></div>
+                            <div className="w-10 h-[2px] bg-blue-600"></div>
                             O que dizem de nós
                         </motion.span>
                         <motion.h2 
@@ -50,15 +50,15 @@ const Testimonials = () => {
                             transition={{ delay: 0.1 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A1128] mt-6 tracking-tight leading-tight"
                         >
-                            A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">excelência.</span>
+                            A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">excelência.</span>
                         </motion.h2>
                     </div>
                     
                     <div className="hidden md:flex gap-4 pb-4">
-                        <button onClick={prev} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all shadow-md">
+                        <button onClick={prev} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
                             <ChevronLeft size={24} />
                         </button>
-                        <button onClick={next} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all shadow-md">
+                        <button onClick={next} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
                             <ChevronRight size={24} />
                         </button>
                     </div>
@@ -88,10 +88,10 @@ const Testimonials = () => {
 
                 {/* Arrows Mobile */}
                 <div className="flex justify-center gap-6 mt-12 md:hidden">
-                    <button onClick={prev} className="w-16 h-16 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all shadow-md">
+                    <button onClick={prev} className="w-16 h-16 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
                         <ChevronLeft size={28} />
                     </button>
-                    <button onClick={next} className="w-16 h-16 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all shadow-md">
+                    <button onClick={next} className="w-16 h-16 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
                         <ChevronRight size={28} />
                     </button>
                 </div>
@@ -106,9 +106,9 @@ const TestimonialCard = ({ review, delay }: { review: any, delay: number }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay }}
-        className="bg-white p-12 rounded-[2.5rem] relative border border-gray-100 hover:border-teal-200 transition-all duration-500 h-full flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(45,212,191,0.1)] group"
+        className="bg-white p-12 rounded-[2.5rem] relative border border-blue-500/20 hover:border-blue-500/80 transition-all duration-500 h-full flex flex-col shadow-[0_10px_35px_rgba(59,130,246,0.03)] hover:shadow-[0_20px_50px_rgba(59,130,246,0.12)] group"
     >
-        <div className="absolute top-10 right-10 text-gray-100 group-hover:text-teal-50 transition-colors duration-500">
+        <div className="absolute top-10 right-10 text-blue-50 group-hover:text-blue-100/50 transition-colors duration-500">
             <Quote size={64} className="transform rotate-180" />
         </div>
 
@@ -126,7 +126,7 @@ const TestimonialCard = ({ review, delay }: { review: any, delay: number }) => (
             <img src={review.avatar} alt={review.name} className="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white" />
             <div>
                 <h4 className="font-black text-[#0A1128] text-lg">{review.name}</h4>
-                <p className="text-xs font-bold uppercase tracking-widest text-teal-600 mt-1">{review.city}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mt-1">{review.city}</p>
             </div>
         </div>
     </motion.div>
