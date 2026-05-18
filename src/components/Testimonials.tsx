@@ -32,36 +32,24 @@ const Testimonials = () => {
     return (
         <section className="bg-gray-50 py-32 overflow-hidden" id="depoimentos">
             <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-6">
-                    <div className="max-w-2xl">
-                        <motion.span 
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm flex items-center gap-3"
-                        >
-                            <div className="w-10 h-[2px] bg-blue-600"></div>
-                            O que dizem de nós
-                        </motion.span>
-                        <motion.h2 
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A1128] mt-6 tracking-tight leading-tight"
-                        >
-                            A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">excelência.</span>
-                        </motion.h2>
-                    </div>
-                    
-                    <div className="hidden md:flex gap-4 pb-4">
-                        <button onClick={prev} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
-                            <ChevronLeft size={24} />
-                        </button>
-                        <button onClick={next} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
-                            <ChevronRight size={24} />
-                        </button>
-                    </div>
+                <div className="text-center mb-16 max-w-3xl mx-auto">
+                    <motion.span 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs sm:text-sm block"
+                    >
+                        O que dizem de nós
+                    </motion.span>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl font-black text-[#0A1128] mt-4 tracking-tight"
+                    >
+                        A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">excelência</span>
+                    </motion.h2>
                 </div>
 
                 <div className="relative">
