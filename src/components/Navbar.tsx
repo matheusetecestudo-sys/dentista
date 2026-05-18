@@ -22,8 +22,8 @@ const Navbar = () => {
                     DUNO<span className="text-teal-400">Odontologia</span>
                 </a>
 
-                <div className="hidden lg:flex items-center space-x-10">
-                    <nav className="flex space-x-8">
+                <div className="hidden xl:flex items-center space-x-6">
+                    <nav className="flex space-x-6">
                         {['Tratamentos', 'Resultados', 'Clínica', 'Depoimentos'].map((item) => (
                             <a 
                                 key={item} 
@@ -36,22 +36,22 @@ const Navbar = () => {
                         ))}
                     </nav>
 
-                    <div className="flex items-center gap-6 border-l border-white/10 pl-8">
+                    <div className="flex items-center gap-5 border-l border-white/10 pl-6">
                         <a href="tel:11992876219" className="flex items-center gap-2 font-bold text-white/80 hover:text-white transition-colors">
-                            <Phone size={18} className="text-teal-400" />
-                            <span className="text-sm tracking-wider">(11) 99287-6219</span>
+                            <Phone size={16} className="text-teal-400" />
+                            <span className="text-xs sm:text-sm tracking-wider">(11) 99287-6219</span>
                         </a>
                         <a
                             href="https://wa.me/5511992876219"
-                            className="bg-white text-[#0A1128] px-6 py-2.5 rounded-full font-black shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 text-sm flex items-center gap-2 group uppercase tracking-wider"
+                            className="bg-white text-[#0A1128] px-5 py-2.5 rounded-full font-black shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 text-xs flex items-center gap-2 group uppercase tracking-wider"
                         >
                             Agendar Consulta
-                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                     </div>
                 </div>
 
-                <button className="lg:hidden text-white focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+                <button className="xl:hidden text-white focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="lg:hidden absolute top-full left-0 w-full bg-[#0A1128]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-8 flex flex-col items-center gap-8"
+                        className="xl:hidden absolute top-full left-0 w-full bg-[#0A1128]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-8 flex flex-col items-center gap-8"
                     >
                         {['Tratamentos', 'Resultados', 'Clínica', 'Depoimentos'].map((item) => (
                             <a
