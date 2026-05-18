@@ -1,4 +1,4 @@
-import { CheckCircle2, Award, ShieldCheck, Droplet, Star, Cpu, Fingerprint, Clock } from 'lucide-react';
+import { Droplet, Star, Cpu, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Differentiators = () => {
