@@ -32,12 +32,12 @@ const Testimonials = () => {
     return (
         <section className="bg-gray-50 py-32 overflow-hidden" id="depoimentos">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16 max-w-3xl mx-auto">
+                <div className="text-center mb-20 max-w-3xl mx-auto">
                     <motion.span 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs sm:text-sm block"
+                        className="text-teal-600 font-bold uppercase tracking-[0.2em] text-xs sm:text-sm block"
                     >
                         O que dizem de nós
                     </motion.span>
@@ -48,7 +48,7 @@ const Testimonials = () => {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl font-black text-[#0A1128] mt-4 tracking-tight"
                     >
-                        A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">excelência</span>
+                        A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">excelência</span>
                     </motion.h2>
                 </div>
 

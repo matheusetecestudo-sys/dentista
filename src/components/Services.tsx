@@ -99,9 +99,11 @@ const Services = () => {
 
                             {/* Conteúdo */}
                             <div className="p-5 md:p-8 flex flex-col flex-grow relative bg-white z-10 -mt-4 rounded-t-3xl transition-transform duration-500">
-                                <h3 className="text-base md:text-xl font-black text-[#0A1128] mb-2 leading-tight group-hover:text-teal-600 transition-colors line-clamp-2">
-                                    {service.title}
-                               </h3>
+                                <div className="min-h-[2.5rem] sm:min-h-[3.25rem] flex items-center mb-2">
+                                    <h3 className="text-base md:text-xl font-black text-[#0A1128] leading-tight group-hover:text-teal-600 transition-colors line-clamp-2">
+                                        {service.title}
+                                    </h3>
+                                </div>
                                 <p className="text-gray-500 mb-6 text-xs md:text-sm leading-relaxed flex-grow font-medium line-clamp-3">
                                     {service.description}
                                 </p>
