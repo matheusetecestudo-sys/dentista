@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 
 const Hero = () => {
     return (
