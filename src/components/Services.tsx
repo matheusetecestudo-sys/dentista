@@ -5,42 +5,42 @@ const treatments = [
     {
         title: 'Clareamento Dental',
         description: 'Clareamento a laser ou caseiro para dentes mais brancos e sorrisos radiantes.',
-        image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1931&auto=format&fit=crop',
+        image: '/clareamento_dental.png',
     },
     {
         title: 'Implantes Dentários',
         description: 'Substituição de dentes perdidos com implantes de alta tecnologia e próteses fixas.',
-        image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop',
+        image: '/implantes_dentarios.png',
     },
     {
         title: 'Ortodontia & Invisalign',
         description: 'Tratamento com aparelho fixo, estético ou Invisalign para correção do sorriso e mordida.',
-        image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2070&auto=format&fit=crop',
+        image: '/Alinhadores Invisíveis.jpeg',
     },
     {
         title: 'Odontologia Estética',
         description: 'Facetas de porcelana, lentes de contato dental, restaurações estéticas e design de sorriso.',
-        image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop',
+        image: '/odontologia_estetica.png',
     },
     {
         title: 'Endodontia (Canal)',
         description: 'Tratamento moderno e indolor para salvar dentes com infecção ou inflamação.',
-        image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2070&auto=format&fit=crop',
+        image: '/endodontia_canal.png',
     },
     {
         title: 'Cirurgia Oral e Extrações',
         description: 'Extração de sisos, enxertos ósseos e pequenas cirurgias bucais com segurança.',
-        image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc206e?q=80&w=2070&auto=format&fit=crop',
+        image: '/cirurgia_oral_extracoes.png',
     },
     {
         title: 'Próteses Dentárias',
         description: 'Coroas, pontes, próteses parciais e totais (protocolo) para reabilitação oral.',
-        image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop',
+        image: '/proteses_dentarias.png',
     },
     {
         title: 'Prevenção & Odontopediatria',
         description: 'Limpeza, profilaxia, aplicação de flúor, check-up e atendimento especializado para crianças.',
-        image: 'https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=2070&auto=format&fit=crop',
+        image: '/odontopediatria_prevencao.png',
     },
 ];
 
