@@ -25,7 +25,7 @@ const Clinic = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#02050A] via-[#02050A]/20 to-transparent"></div>
                             <div className="absolute bottom-8 left-8 right-8">
-                                <p className="font-black text-5xl text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-400">Premium</p>
+                                <p className="font-black text-5xl text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-400">DUNO</p>
                                 <p className="text-sm font-bold text-teal-100 uppercase tracking-widest mt-2">Ambiente & Tecnologia</p>
                             </div>
                         </div>
@@ -45,7 +45,7 @@ const Clinic = () => {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Conforto absoluto.</span>
                         </h2>
                         <p className="text-white/60 text-lg font-medium leading-relaxed mb-10">
-                            Unimos a precisão da engenharia suíça com a hospitalidade de um hotel 5 estrelas. Uma experiência desenhada para quem não aceita nada menos que a perfeição.
+                            Unimos a precisão da engenharia suíça com a excelência de um atendimento totalmente humanizado. Uma experiência desenhada para quem não aceita nada menos que a perfeição.
                         </p>
 
                         <div className="space-y-6">
@@ -57,8 +57,8 @@ const Clinic = () => {
                                 },
                                 {
                                     icon: <Star className="w-6 h-6" />,
-                                    title: "Atendimento Concierge",
-                                    desc: "Recepção VIP com menu de cafés premium e aromaterapia."
+                                    title: "Atendimento Acolhedor",
+                                    desc: "Recepção atenciosa com atenção aos mínimos detalhes para o seu conforto."
                                 },
                                 {
                                     icon: <ShieldCheck className="w-6 h-6" />,

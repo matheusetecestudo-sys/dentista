@@ -19,18 +19,18 @@ const CTA = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
                     
                     <span className="bg-teal-500/20 text-teal-300 font-bold py-2 px-6 rounded-full text-xs uppercase tracking-[0.2em] mb-8 inline-block border border-teal-500/30">
-                        Atendimento Exclusivo VIP
+                        Atendimento Personalizado e Acolhedor
                     </span>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tight leading-tight">
                         Seu novo sorriso está a <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">um clique de distância.</span>
                     </h2>
                     <p className="text-xl text-white/60 mb-12 font-medium leading-relaxed max-w-2xl mx-auto">
-                        Fale diretamente com nossa equipe de concierge via WhatsApp. Sem formulários cansativos, sem espera. Atendimento imediato.
+                        Fale diretamente com nossa equipe de atendimento via WhatsApp. Sem burocracia ou formulários cansativos. Resposta rápida e humanizada.
                     </p>
 
                     <div className="flex flex-col items-center justify-center gap-6">
                         <a
-                            href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20VIP."
+                            href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-white text-[#0A1128] font-black py-5 px-10 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300 flex items-center justify-center gap-4 w-full sm:w-auto group uppercase tracking-widest text-sm"

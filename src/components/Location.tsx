@@ -38,7 +38,7 @@ const Location = () => {
                             <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <MapPin className="w-7 h-7 text-teal-600" />
                             </div>
-                            <h3 className="text-xl font-bold text-[#0A1128] mb-3">Endereço Premium</h3>
+                            <h3 className="text-xl font-bold text-[#0A1128] mb-3">Nossa Localização</h3>
                             <p className="text-gray-600 font-medium leading-relaxed">
                                 Av. Paulista, 1000 - Bela Vista<br />
                                 São Paulo - SP, 01310-100

@@ -10,12 +10,12 @@ const Footer = () => {
                     <div className="lg:col-span-1">
                         <a href="#" className="text-3xl font-black tracking-tighter text-white flex items-center gap-2 mb-6">
                             <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-blue-500 rounded-lg flex items-center justify-center shadow-lg">
-                                <span className="text-white text-xl leading-none">O</span>
+                                <span className="text-white text-xl leading-none">D</span>
                             </div>
-                            Odonto<span className="text-teal-400">Premium</span>
+                            DUNO<span className="text-teal-400">Odontologia</span>
                         </a>
                         <p className="text-white/50 text-sm leading-relaxed mb-8 font-medium pr-4">
-                            Odontologia de alta performance para clientes que exigem o que há de melhor em estética e saúde bucal.
+                            Odontologia moderna e de alta precisão para pacientes que exigem o que há de melhor em estética e saúde bucal.
                         </p>
                         <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-teal-500 hover:text-white hover:border-teal-500 transition-all text-white/70">
@@ -69,7 +69,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="text-teal-400 w-5 h-5 flex-shrink-0" />
-                                <span className="text-white/50 text-sm">contato@odontopremium.com</span>
+                                <span className="text-white/50 text-sm">contato@dunoodonto.com.br</span>
                             </li>
                         </ul>
                     </div>
@@ -77,7 +77,7 @@ const Footer = () => {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-white/30 text-xs font-medium">
-                        &copy; {new Date().getFullYear()} Odonto Premium. Todos os direitos reservados.
+                        &copy; {new Date().getFullYear()} DUNO Odontologia. Todos os direitos reservados.
                     </p>
                     <p className="text-white/30 text-xs font-medium">
                         CRO/SP: 123456 | Resp. Técnico: Dr. Nome Sobrenome

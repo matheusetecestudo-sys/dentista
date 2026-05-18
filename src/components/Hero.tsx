@@ -7,9 +7,9 @@ const Hero = () => {
             {/* Background com Imagem Deslumbrante Full Screen */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=100"
-                    alt="Clínica Dentária Premium"
-                    className="w-full h-full object-cover opacity-50 scale-105 transition-transform duration-[30s] hover:scale-100"
+                    src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=100"
+                    alt="Clínica Dentária DUNO"
+                    className="w-full h-full object-cover opacity-55 scale-105 transition-transform duration-[30s] hover:scale-100"
                 />
                 {/* Gradiente escurecendo a base e topo para leitura perfeita do texto e menu */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#02050A] via-[#02050A]/85 to-transparent"></div>
@@ -35,22 +35,22 @@ const Hero = () => {
                         <div className="flex -space-x-3">
                             <img 
                                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces&q=80" 
-                                alt="Paciente VIP" 
+                                alt="Paciente" 
                                 className="w-9 h-9 rounded-full border-2 border-[#02050A] object-cover" 
                             />
                             <img 
                                 src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=100&h=100&fit=crop&crop=faces&q=80" 
-                                alt="Paciente VIP" 
+                                alt="Paciente" 
                                 className="w-9 h-9 rounded-full border-2 border-[#02050A] object-cover" 
                             />
                             <img 
                                 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces&q=80" 
-                                alt="Paciente VIP" 
+                                alt="Paciente" 
                                 className="w-9 h-9 rounded-full border-2 border-[#02050A] object-cover" 
                             />
                             <img 
                                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&q=80" 
-                                alt="Paciente VIP" 
+                                alt="Paciente" 
                                 className="w-9 h-9 rounded-full border-2 border-[#02050A] object-cover" 
                             />
                         </div>
@@ -60,7 +60,7 @@ const Hero = () => {
                                     <Star key={i} className="w-3.5 h-3.5 fill-current drop-shadow-[0_0_5px_rgba(250,204,21,0.4)]" />
                                 ))}
                             </div>
-                            <p className="text-[10px] sm:text-xs font-bold text-white/80 uppercase tracking-widest mt-0.5">Recomendado por +1,200 pacientes VIP</p>
+                            <p className="text-[10px] sm:text-xs font-bold text-white/80 uppercase tracking-widest mt-0.5">Recomendado por +1,200 pacientes satisfeitos</p>
                         </div>
                     </motion.div>
 
@@ -70,7 +70,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-lg md:text-xl text-blue-50/80 max-w-2xl font-medium leading-relaxed">
-                        Experimente a odontologia de altíssimo padrão. Tecnologia suíça, conforto absoluto e resultados estéticos extraordinários que transformam a sua assinatura pessoal.
+                        Referência em odontologia digital e reabilitação estética. Tecnologia de precisão e atendimento centrado no seu bem-estar para resultados extraordinários.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-5 pt-4">
@@ -78,7 +78,7 @@ const Hero = () => {
                             href="https://wa.me/5511992876219" 
                             className="group relative overflow-hidden bg-white text-[#0A1128] px-10 py-5 rounded-full font-black uppercase tracking-wider hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300 flex items-center justify-center gap-3 text-sm"
                         >
-                            <span className="relative z-10">Agendar Avaliação VIP</span>
+                            <span className="relative z-10">Agendar Consulta</span>
                             <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                             <div className="absolute inset-0 bg-teal-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                         </a>
@@ -86,9 +86,9 @@ const Hero = () => {
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 mt-6 border-t border-white/10 max-w-lg">
                         {[
-                            { value: "15+", label: "Anos de Elite" },
+                            { value: "15+", label: "Anos de Atuação" },
                             { value: "5k+", label: "Sorrisos Transformados" },
-                            { icon: <ShieldCheck className="w-8 h-8 text-teal-400" />, label: "Padrão Internacional" }
+                            { icon: <ShieldCheck className="w-8 h-8 text-teal-400" />, label: "Tecnologia Digital" }
                         ].map((stat, i) => (
                             <motion.div 
                                 key={i}
