@@ -3,43 +3,43 @@ import { ArrowRight } from 'lucide-react';
 
 const treatments = [
     {
-        title: 'Implantes Dentários',
-        description: 'Sorriso completo e seguro com tecnologia avançada de reposição.',
-        image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop',
-    },
-    {
-        title: 'Lentes de Contato',
-        description: 'Estética de alto padrão para um sorriso perfeito e natural.',
-        image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop',
-    },
-    {
-        title: 'Invisalign',
-        description: 'Alinhadores invisíveis e removíveis para máxima discrição.',
-        image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2070&auto=format&fit=crop',
-    },
-    {
         title: 'Clareamento Dental',
-        description: 'Dentes brancos e radiantes com protocolos exclusivos e seguros.',
+        description: 'Clareamento a laser ou caseiro para dentes mais brancos e sorrisos radiantes.',
         image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1931&auto=format&fit=crop',
     },
     {
-        title: 'Prótese Dentária',
-        description: 'Recupere a função mastigatória e a beleza do seu sorriso.',
-        image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop',
+        title: 'Implantes Dentários',
+        description: 'Substituição de dentes perdidos com implantes de alta tecnologia e próteses fixas.',
+        image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop',
     },
     {
-        title: 'Harmonização Facial',
-        description: 'Realce sua beleza natural com procedimentos sutis e modernos.',
-        image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc206e?q=80&w=2070&auto=format&fit=crop',
+        title: 'Ortodontia & Invisalign',
+        description: 'Tratamento com aparelho fixo, estético ou Invisalign para correção do sorriso e mordida.',
+        image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+        title: 'Odontologia Estética',
+        description: 'Facetas de porcelana, lentes de contato dental, restaurações estéticas e design de sorriso.',
+        image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop',
     },
     {
         title: 'Endodontia (Canal)',
-        description: 'Tratamento de precisão indolor para salvar seus dentes.',
+        description: 'Tratamento moderno e indolor para salvar dentes com infecção ou inflamação.',
         image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2070&auto=format&fit=crop',
     },
     {
-        title: 'Check-up & Limpeza',
-        description: 'Prevenção essencial para manter sua saúde bucal sempre em dia.',
+        title: 'Cirurgia Oral e Extrações',
+        description: 'Extração de sisos, enxertos ósseos e pequenas cirurgias bucais com segurança.',
+        image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc206e?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+        title: 'Próteses Dentárias',
+        description: 'Coroas, pontes, próteses parciais e totais (protocolo) para reabilitação oral.',
+        image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+        title: 'Prevenção & Odontopediatria',
+        description: 'Limpeza, profilaxia, aplicação de flúor, check-up e atendimento especializado para crianças.',
         image: 'https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=2070&auto=format&fit=crop',
     },
 ];
@@ -99,10 +99,10 @@ const Services = () => {
 
                             {/* Conteúdo */}
                             <div className="p-5 md:p-8 flex flex-col flex-grow relative bg-white z-10 -mt-4 rounded-t-3xl transition-transform duration-500">
-                                <h3 className="text-lg md:text-xl font-black text-[#0A1128] mb-2 leading-tight group-hover:text-teal-600 transition-colors">
+                                <h3 className="text-base md:text-xl font-black text-[#0A1128] mb-2 leading-tight group-hover:text-teal-600 transition-colors line-clamp-2">
                                     {service.title}
                                </h3>
-                                <p className="text-gray-500 mb-6 text-sm leading-relaxed flex-grow font-medium">
+                                <p className="text-gray-500 mb-6 text-xs md:text-sm leading-relaxed flex-grow font-medium line-clamp-3">
                                     {service.description}
                                 </p>
                                 <a 
