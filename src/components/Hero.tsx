@@ -55,12 +55,6 @@ const Hero = () => {
                             <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                             <div className="absolute inset-0 bg-teal-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                         </a>
-                        <a 
-                            href="https://wa.me/5511992876219?text=EMERG%C3%8ANCIA%3A%20Preciso%20de%20atendimento%20urgente." 
-                            className="group border border-white/20 bg-white/5 backdrop-blur-sm text-white px-9 py-4 rounded-full font-bold hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-3 uppercase tracking-wide"
-                        >
-                            <span>Emergência 24h</span>
-                        </a>
                     </div>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 mt-6 border-t border-white/10">

@@ -31,14 +31,6 @@ const CTA = () => {
                                 Chamar no WhatsApp
                                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </a>
-
-                            <a
-                                href="tel:+5511992876219"
-                                className="bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-xl hover:bg-white/10 transition w-full sm:w-auto flex items-center justify-center gap-3 group"
-                            >
-                                Ligar Agora
-                                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                            </a>
                         </div>
 
                         <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-300">
