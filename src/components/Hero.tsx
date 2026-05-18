@@ -1,96 +1,123 @@
-
-import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Star, ShieldCheck, Award } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <div className="relative bg-medical-light min-h-screen flex items-center overflow-hidden">
-            {/* Background Image with Overlay */}
+        <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-[#0A1128]">
+            {/* Background com efeito Parallax e Vidro */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                    alt="Clínica Odontológica Moderna"
-                    className="w-full h-full object-cover"
+                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    alt="Clínica Premium"
+                    className="w-full h-full object-cover opacity-40 scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-medical-primary/95 to-medical-primary/70 md:to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0A1128] via-[#0A1128]/90 to-transparent"></div>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center pt-20 pb-12">
-                {/* Text Content */}
-                <div className="text-white space-y-8 animate-fade-in-up">
-                    <div className="flex items-center gap-2 bg-medical-secondary/20 w-fit px-4 py-1 rounded-full border border-medical-secondary/30 backdrop-blur-sm">
-                        <Star className="w-4 h-4 text-medical-secondary fill-current" />
-                        <span className="text-sm font-medium text-medical-secondary uppercase tracking-wider">Excelência em Odontologia</span>
-                    </div>
+            <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-32 pb-16">
+                
+                {/* Content Left */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-white space-y-8"
+                >
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                        className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+                    >
+                        <div className="flex gap-1">
+                            {[1,2,3,4,5].map((_, i) => (
+                                <Star key={i} className="w-4 h-4 text-yellow-400 fill-current drop-shadow-[0_0_5px_rgba(250,204,21,0.5)]" />
+                            ))}
+                        </div>
+                        <span className="text-xs font-bold text-white/90 uppercase tracking-widest">Padrão Ouro em Odontologia</span>
+                    </motion.div>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                        A Engenharia do <span className="text-medical-secondary">Sorriso Perfeito</span>: Tecnologia de Elite
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight">
+                        A Arte do <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-500 drop-shadow-sm">Sorriso Perfeito</span>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-gray-200 max-w-xl">
-                        Protocolos exclusivos e tecnologia de alta performance para redefinir sua imagem e transformar sua saúde bucal em uma experiência de luxo.
+                    <p className="text-lg md:text-xl text-blue-50/80 max-w-lg font-medium leading-relaxed">
+                        Experimente a odontologia de alto padrão. Tecnologia de ponta, conforto absoluto e resultados que transformam vidas.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <div className="flex flex-col sm:flex-row gap-5 pt-6">
                         <a 
                             href="https://wa.me/5511992876219" 
-                            className="bg-medical-secondary text-white px-8 py-4 rounded-full font-bold shadow-xl hover:bg-white hover:text-medical-secondary transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
+                            className="group relative overflow-hidden bg-white text-[#0A1128] px-9 py-4 rounded-full font-black uppercase tracking-wide hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300 flex items-center justify-center gap-3"
                         >
-                            Agendar Avaliação 
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <span className="relative z-10">Agendar Avaliação</span>
+                            <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                            <div className="absolute inset-0 bg-teal-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                         </a>
                         <a 
                             href="https://wa.me/5511992876219?text=EMERG%C3%8ANCIA%3A%20Preciso%20de%20atendimento%20urgente." 
-                            className="bg-red-500/10 border-2 border-red-500 text-red-500 px-8 py-4 rounded-full font-bold hover:bg-red-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group"
+                            className="group border border-white/20 bg-white/5 backdrop-blur-sm text-white px-9 py-4 rounded-full font-bold hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center justify-center gap-3 uppercase tracking-wide"
                         >
-                            Emergência 24h
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <span>Emergência 24h</span>
                         </a>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-white/10">
-                        <div>
-                            <p className="text-3xl font-bold text-white">15+</p>
-                            <p className="text-sm text-gray-300">Anos de Experiência</p>
-                        </div>
-                        <div>
-                            <p className="text-3xl font-bold text-white">5k+</p>
-                            <p className="text-sm text-gray-300">Pacientes Sorrindo</p>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <div className="bg-white/10 p-2 rounded-lg">
-                                <ShieldCheck className="w-6 h-6 text-medical-secondary" />
-                            </div>
-                            <p className="text-sm text-gray-300">Tecnologia<br />Certificada</p>
-                        </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 mt-6 border-t border-white/10">
+                        {[
+                            { value: "15+", label: "Anos de Elite" },
+                            { value: "5k+", label: "Sorrisos Transformados" },
+                            { icon: <ShieldCheck className="w-8 h-8 text-teal-400" />, label: "Tecnologia Certificada" }
+                        ].map((stat, i) => (
+                            <motion.div 
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4 + (i * 0.1) }}
+                            >
+                                {stat.value ? (
+                                    <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-100">{stat.value}</p>
+                                ) : stat.icon}
+                                <p className="text-xs text-white/50 uppercase tracking-wider font-bold mt-2">{stat.label}</p>
+                            </motion.div>
+                        ))}
                     </div>
-                </div>
+                </motion.div>
 
-                {/* Hero Image (Desktop only mostly visible) */}
-                <div className="hidden md:block relative animate-fade-in-left">
-                    {/* Placeholder for a secondary image or graphic if needed, but the background covers it mostly. 
-               However, to make it look premium, maybe a floating card or dentist portrait. 
-           */}
-                    <div className="relative">
+                {/* Right Image/Graphic */}
+                <motion.div 
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="hidden lg:block relative"
+                >
+                    <div className="absolute inset-0 bg-teal-500/20 blur-[100px] rounded-full -z-10"></div>
+                    <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
                         <img
                             src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Dentista Sorrindo"
-                            className="rounded-2xl shadow-2xl border-4 border-white/20 w-3/4 ml-auto"
+                            alt="Dentista de Elite"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs animate-bounce-slow">
-                            <div className="flex items-center gap-4">
-                                <div className="bg-green-100 p-3 rounded-full">
-                                    <Star className="w-6 h-6 text-green-600 fill-current" />
-                                </div>
-                                <div>
-                                    <p className="font-bold text-gray-800">4.9/5.0</p>
-                                    <p className="text-sm text-gray-500">Avaliações de Pacientes</p>
-                                </div>
-                            </div>
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-transparent to-transparent opacity-80"></div>
                     </div>
-                </div>
+
+                    <motion.div 
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 1, type: "spring", stiffness: 200 }}
+                        className="absolute -bottom-8 -left-8 bg-[#0A1128]/90 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-2xl flex items-center gap-5"
+                    >
+                        <div className="bg-gradient-to-br from-teal-400 to-blue-500 p-4 rounded-full shadow-[0_0_20px_rgba(45,212,191,0.3)]">
+                            <Award className="w-8 h-8 text-white" />
+                        </div>
+                        <div>
+                            <p className="font-black text-2xl text-white">Top 1%</p>
+                            <p className="text-xs uppercase tracking-wider text-teal-300 font-bold">Clínica Referência</p>
+                        </div>
+                    </motion.div>
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 };
 

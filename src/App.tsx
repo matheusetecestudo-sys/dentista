@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials';
 import Team from './components/Team';
 import Experience from './components/Experience';
 import CTA from './components/CTA';
+import Location from './components/Location';
 import Footer from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 
@@ -23,6 +24,7 @@ function App() {
         <Team />
         <Testimonials />
         <Experience />
+        <Location />
         <CTA />
       </main>
       <Footer />
