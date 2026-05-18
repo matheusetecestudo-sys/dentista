@@ -1,94 +1,129 @@
-import { CheckCircle2, Award, ShieldCheck, Droplet, Star } from 'lucide-react';
+import { CheckCircle2, Award, ShieldCheck, Droplet, Star, Cpu, Fingerprint, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Differentiators = () => {
     return (
-        <section className="bg-[#050B14] text-white py-32 overflow-hidden relative" id="clinica">
-            {/* Background elements */}
-            <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-teal-500/10 blur-[120px] rounded-full -z-10"></div>
-            <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full -z-10"></div>
+        <section className="bg-[#02050A] text-white py-32 overflow-hidden relative" id="clinica">
+            {/* Background ambient light */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.15),transparent_70%)] blur-[100px] -z-10"></div>
 
-            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center relative z-10">
-                <motion.div 
-                    initial={{ opacity: 0, x: -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <span className="text-teal-400 font-bold uppercase tracking-[0.2em] text-sm">Por que nos escolher?</span>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mt-4 mb-6 leading-tight tracking-tight">
-                        Padrão Ouro em <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Performance Odontológica</span>
-                    </h2>
-                    <p className="text-white/60 mb-10 text-lg md:text-xl font-medium leading-relaxed">
-                        Unimos a precisão da engenharia moderna com a arte da estética dental. Protocolos exclusivos desenhados para quem não aceita nada menos que a perfeição absoluta.
-                    </p>
-
-                    <ul className="space-y-6 mb-12">
-                        {[
-                            "Scanner Intraoral 3D: Diga adeus às moldagens desconfortáveis.",
-                            "Protocolo de Sedação Consciente para uma experiência sem ansiedade.",
-                            "Planejamento Digital do Sorriso (DSD) antes de começar.",
-                            "Laboratório próprio para entregas com agilidade impressionante.",
-                        ].map((item, idx) => (
-                            <motion.li 
-                                key={idx} 
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 + idx * 0.1 }}
-                                className="flex items-start gap-4"
-                            >
-                                <div className="mt-1 bg-teal-500/20 p-1 rounded-full">
-                                    <CheckCircle2 className="w-5 h-5 text-teal-400 flex-shrink-0" />
-                                </div>
-                                <span className="text-lg text-white/90 font-medium">{item}</span>
-                            </motion.li>
-                        ))}
-                    </ul>
-
-                    {/* Integrated Trust Icons */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 border-t border-white/10">
-                        {[
-                            { icon: <Award />, label: "Mestres e Doutores" },
-                            { icon: <ShieldCheck />, label: "Tecnologia Suíça" },
-                            { icon: <Droplet />, label: "Biossegurança Hospitalar" },
-                            { icon: <Star />, label: "Atendimento 5 Estrelas" },
-                        ].map((stat, i) => (
-                            <div key={i} className="flex flex-col gap-3 group">
-                                <div className="bg-white/5 border border-white/10 p-4 rounded-2xl w-14 h-14 flex items-center justify-center text-teal-400 group-hover:bg-teal-500 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-lg">
-                                    {stat.icon}
-                                </div>
-                                <span className="text-xs font-bold uppercase tracking-wider text-white/50 group-hover:text-white/80 transition-colors">{stat.label}</span>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                    className="relative"
-                >
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-blue-600 rounded-[2.5rem] transform rotate-3 scale-105 opacity-30 blur-lg"></div>
-                    <img
-                        src="https://images.unsplash.com/photo-1588776814546-f4471b57713d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Tecnologia Odontológica Avançada"
-                        className="rounded-[2.5rem] shadow-2xl relative z-10 w-full object-cover h-[600px] border border-white/10"
-                    />
-                    
-                    <motion.div 
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
+            <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+                <div className="text-center max-w-4xl mx-auto mb-20">
+                    <motion.span 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
-                        className="absolute -bottom-8 -left-8 z-20 bg-[#0A1128]/90 backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                        className="text-teal-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 block"
                     >
-                        <p className="font-black text-5xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-400">100%</p>
-                        <p className="text-sm font-bold text-white/70 uppercase tracking-widest max-w-[150px]">Satisfação em estética dental</p>
+                        A Assinatura da Excelência
+                    </motion.span>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight"
+                    >
+                        Não fazemos odontologia. <br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Criamos obras de arte.</span>
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-white/60 text-lg md:text-xl font-medium leading-relaxed"
+                    >
+                        Esqueça o padrão. Nossa clínica foi milimetricamente desenhada para o paciente que valoriza precisão absoluta, tecnologia de ponta e resultados que transcendem a estética comum.
+                    </motion.p>
+                </div>
+
+                {/* Bento Box Grid - No Images, purely UI/Typography/Icons */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {/* Highlight Card */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="lg:col-span-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 p-10 md:p-12 rounded-[2rem] hover:border-teal-500/30 transition-colors group relative overflow-hidden"
+                    >
+                        <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-700">
+                            <Cpu size={120} />
+                        </div>
+                        <div className="bg-teal-500/20 w-16 h-16 rounded-2xl flex items-center justify-center text-teal-400 mb-8 border border-teal-500/20">
+                            <Cpu size={32} />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black mb-4">Precisão Cirúrgica 3D</h3>
+                        <p className="text-white/60 font-medium leading-relaxed max-w-lg text-lg">
+                            Diga adeus às moldagens desconfortáveis. Utilizamos scanners intraorais de última geração para um planejamento digital milimétrico, garantindo que você veja o resultado final antes mesmo do tratamento começar.
+                        </p>
                     </motion.div>
-                </motion.div>
+
+                    {/* Standard Card */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="bg-white/5 border border-white/10 p-10 rounded-[2rem] hover:border-teal-500/30 transition-colors group"
+                    >
+                        <div className="bg-white/10 w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                            <Droplet size={28} />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3">Biossegurança Nível Hospitalar</h3>
+                        <p className="text-white/50 font-medium leading-relaxed text-sm">
+                            Seguimos protocolos internacionais rigorosos de esterilização. Sua saúde e integridade são o nosso foco absoluto em cada etapa.
+                        </p>
+                    </motion.div>
+
+                    {/* Standard Card */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                        className="bg-white/5 border border-white/10 p-10 rounded-[2rem] hover:border-teal-500/30 transition-colors group"
+                    >
+                        <div className="bg-white/10 w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                            <Clock size={28} />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3">Laboratório Digital Próprio</h3>
+                        <p className="text-white/50 font-medium leading-relaxed text-sm">
+                            Próteses e alinhadores esculpidos por impressoras 3D internas. Agilidade extrema sem jamais comprometer a perfeição do detalhe.
+                        </p>
+                    </motion.div>
+
+                    {/* Standard Card */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className="bg-white/5 border border-white/10 p-10 rounded-[2rem] hover:border-teal-500/30 transition-colors group"
+                    >
+                        <div className="bg-white/10 w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                            <Star size={28} />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3">Sedação Consciente</h3>
+                        <p className="text-white/50 font-medium leading-relaxed text-sm">
+                            Uma jornada rumo ao sorriso perfeito sem dor, medo ou ansiedade. Durma e acorde com a transformação finalizada.
+                        </p>
+                    </motion.div>
+
+                    {/* Stats Card */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        className="bg-gradient-to-br from-teal-900/40 to-blue-900/40 border border-teal-500/20 p-10 rounded-[2rem] flex flex-col justify-center items-center text-center relative overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+                        <p className="font-black text-6xl md:text-7xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-400 relative z-10">100%</p>
+                        <p className="text-sm font-bold text-teal-100 uppercase tracking-[0.2em] relative z-10">Compromisso com o seu resultado</p>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
