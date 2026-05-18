@@ -1,76 +1,84 @@
-
 import { Coffee, ShieldCheck, Clock, Sofa } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const items = [
     {
-        icon: <Sofa className="w-8 h-8 text-medical-secondary" />,
+        icon: <Sofa className="w-6 h-6" />,
         title: "Ambiente Boutique",
-        description: "Fuja do clima hospitalar. Nossa clínica foi projetada com design de interiores de luxo para seu total conforto."
+        description: "Design de interiores de luxo projetado para total relaxamento."
     },
     {
-        icon: <Coffee className="w-8 h-8 text-medical-secondary" />,
+        icon: <Coffee className="w-6 h-6" />,
         title: "Espaço Concierge",
-        description: "Menu de cafés gourmet, chás e um atendimento personalizado desde o primeiro minuto."
+        description: "Menu de cafés premium, chás e atendimento exclusivo."
     },
     {
-        icon: <Clock className="w-8 h-8 text-medical-secondary" />,
-        title: "Pontualidade Rigorosa",
-        description: "Seu tempo é valioso. Trabalhamos com agendas otimizadas para que você nunca precise esperar."
+        icon: <Clock className="w-6 h-6" />,
+        title: "Pontualidade Absoluta",
+        description: "Agendas otimizadas com precisão britânica. Zero espera."
     },
     {
-        icon: <ShieldCheck className="w-8 h-8 text-medical-secondary" />,
-        title: "Privacidade Total",
-        description: "Salas de espera privativas e atendimento individualizado para garantir sua discrição."
+        icon: <ShieldCheck className="w-6 h-6" />,
+        title: "Privacidade e Discrição",
+        description: "Salas VIP e isolamento acústico garantindo sua intimidade."
     }
 ];
 
 const Experience = () => {
     return (
-        <section className="py-20 bg-medical-primary text-white overflow-hidden">
+        <section className="py-32 bg-[#0A1128] text-white overflow-hidden relative">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(45,212,191,0.05),transparent_70%)] blur-[80px] -z-10"></div>
             <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <motion.div 
-                        initial={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, x: -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-medical-secondary font-bold uppercase tracking-widest text-sm">Experiência & Estrutura</span>
-                        <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-8 leading-tight">
-                            Muito além de uma consulta, um momento de <span className="text-medical-secondary">bem-estar.</span>
+                        <span className="text-teal-400 font-bold uppercase tracking-[0.2em] text-sm">Experiência High-End</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mt-4 mb-8 leading-tight tracking-tight">
+                            Um refúgio de bem-estar disfarçado de <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Clínica.</span>
                         </h2>
-                        <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-                            Redefinimos o conceito de ir ao dentista. Criamos um ecossistema de cuidado onde a tecnologia de ponta se encontra com a hospitalidade de alto padrão.
+                        <p className="text-white/60 text-lg mb-12 leading-relaxed font-medium">
+                            Nós abolimos o medo e a ansiedade de ir ao dentista. Criamos um ecossistema 5 estrelas onde o mais alto rigor clínico encontra a sofisticação da hotelaria de luxo.
                         </p>
 
-                        <div className="grid sm:grid-cols-2 gap-8">
+                        <div className="grid sm:grid-cols-2 gap-x-8 gap-y-10">
                             {items.map((item, index) => (
-                                <div key={index} className="group">
-                                    <div className="mb-4 bg-white/10 w-14 h-14 rounded-2xl flex items-center justify-center group-hover:bg-medical-secondary transition-colors duration-500">
+                                <motion.div 
+                                    key={index} 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="group"
+                                >
+                                    <div className="mb-5 bg-white/5 border border-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-teal-400 group-hover:bg-teal-500 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-lg">
                                         {item.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
-                                </div>
+                                    <h3 className="text-xl font-bold mb-3 text-white/90">{item.title}</h3>
+                                    <p className="text-white/50 text-sm leading-relaxed font-medium">{item.description}</p>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>
 
                     <motion.div 
-                        className="grid grid-cols-2 gap-4"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="grid grid-cols-2 gap-4 lg:gap-6 relative"
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 1 }}
                     >
-                        <div className="space-y-4">
-                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-64 object-cover shadow-2xl" />
-                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-48 object-cover shadow-2xl" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-transparent to-transparent z-10 lg:hidden"></div>
+                        <div className="space-y-4 lg:space-y-6 transform translate-y-10">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lobby" className="rounded-3xl w-full h-72 object-cover shadow-2xl hover:scale-105 transition-transform duration-700 border border-white/5" />
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Consultório" className="rounded-3xl w-full h-56 object-cover shadow-2xl hover:scale-105 transition-transform duration-700 border border-white/5" />
                         </div>
-                        <div className="space-y-4 pt-8">
-                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-48 object-cover shadow-2xl" />
-                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galeria" className="rounded-3xl w-full h-64 object-cover shadow-2xl" />
+                        <div className="space-y-4 lg:space-y-6">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Detalhe" className="rounded-3xl w-full h-56 object-cover shadow-2xl hover:scale-105 transition-transform duration-700 border border-white/5" />
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tecnologia" className="rounded-3xl w-full h-72 object-cover shadow-2xl hover:scale-105 transition-transform duration-700 border border-white/5" />
                         </div>
                     </motion.div>
                 </div>

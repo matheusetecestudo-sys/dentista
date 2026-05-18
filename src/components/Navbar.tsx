@@ -1,79 +1,89 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
-        <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'}`}>
+        <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#0A1128]/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <a href="#" className={`text-2xl font-bold font-serif ${scrolled ? 'text-medical-primary' : 'text-medical-primary md:text-white'}`}>
-                    Odonto<span className="text-medical-secondary">Premium</span>
+                <a href="#" className="text-2xl font-black tracking-tighter text-white flex items-center gap-2">
+                    <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-blue-500 rounded-lg flex items-center justify-center shadow-lg">
+                        <span className="text-white text-lg leading-none">O</span>
+                    </div>
+                    Odonto<span className="text-teal-400">Premium</span>
                 </a>
 
-                <div className="hidden md:flex items-center space-x-8">
-                    <nav className="flex space-x-6">
-                        <a href="#home" className={`font-medium hover:text-medical-secondary transition ${scrolled ? 'text-gray-600' : 'text-gray-200'}`}>Início</a>
-                        <a href="#tratamentos" className={`font-medium hover:text-medical-secondary transition ${scrolled ? 'text-gray-600' : 'text-gray-200'}`}>Tratamentos</a>
-                        <a href="#sobre" className={`font-medium hover:text-medical-secondary transition ${scrolled ? 'text-gray-600' : 'text-gray-200'}`}>Sobre</a>
-                        <a href="#depoimentos" className={`font-medium hover:text-medical-secondary transition ${scrolled ? 'text-gray-600' : 'text-gray-200'}`}>Depoimentos</a>
+                <div className="hidden lg:flex items-center space-x-10">
+                    <nav className="flex space-x-8">
+                        {['Tratamentos', 'Resultados', 'Clínica', 'Depoimentos'].map((item) => (
+                            <a 
+                                key={item} 
+                                href={`#${item.toLowerCase()}`} 
+                                className="text-sm font-bold text-white/80 hover:text-white uppercase tracking-widest relative group transition-colors"
+                            >
+                                {item}
+                                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-teal-400 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        ))}
                     </nav>
 
-                    <div className="flex items-center gap-4 border-l pl-6 border-white/20">
-                        <a href="tel:11992876219" className={`flex items-center gap-2 font-bold hover:text-medical-secondary transition-colors ${scrolled ? 'text-medical-primary' : 'text-white'}`}>
-                            <Phone size={18} />
-                            <span>(11) 99287-6219</span>
+                    <div className="flex items-center gap-6 border-l border-white/10 pl-8">
+                        <a href="tel:11992876219" className="flex items-center gap-2 font-bold text-white/80 hover:text-white transition-colors">
+                            <Phone size={18} className="text-teal-400" />
+                            <span className="text-sm tracking-wider">(11) 99287-6219</span>
                         </a>
                         <a
                             href="https://wa.me/5511992876219"
-                            className="bg-medical-secondary text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:bg-white hover:text-medical-secondary transition-all duration-300 transform hover:-translate-y-0.5 text-sm flex items-center gap-2 group/nav"
+                            className="bg-white text-[#0A1128] px-6 py-2.5 rounded-full font-black shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 text-sm flex items-center gap-2 group uppercase tracking-wider"
                         >
-                            Agendar Consulta
-                            <ArrowRight size={16} className="group-hover/nav:translate-x-1 transition-transform" />
+                            Agendar VIP
+                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                     </div>
                 </div>
 
-                <button className="md:hidden text-medical-primary focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X size={28} /> : <Menu size={28} className={scrolled ? 'text-medical-primary' : 'text-white'} />}
+                <button className="lg:hidden text-white focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-6 flex flex-col items-center gap-6 animate-fade-in-down border-t border-gray-100">
-                    {['Tratamentos', 'Sobre', 'Depoimentos', 'FAQ'].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="text-gray-600 font-medium text-lg"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {item}
-                        </a>
-                    ))}
-                    <a 
-                        href="https://wa.me/5511992876219?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." 
-                        className="bg-medical-secondary text-white px-8 py-3 rounded-full font-bold shadow-md w-3/4 text-center flex items-center justify-center gap-2"
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="lg:hidden absolute top-full left-0 w-full bg-[#0A1128]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-8 flex flex-col items-center gap-8"
                     >
-                        Agendar Consulta
-                        <ArrowRight size={18} />
-                    </a>
-                    <a href="tel:11992876219" className="flex items-center gap-2 text-medical-primary font-bold">
-                        <Phone size={18} /> (11) 99287-6219
-                    </a>
-                </div>
-            )}
+                        {['Tratamentos', 'Resultados', 'Clínica', 'Depoimentos'].map((item) => (
+                            <a
+                                key={item}
+                                href={`#${item.toLowerCase()}`}
+                                className="text-white/80 hover:text-white hover:scale-110 font-bold text-lg uppercase tracking-widest transition-all"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {item}
+                            </a>
+                        ))}
+                        <a 
+                            href="https://wa.me/5511992876219" 
+                            className="bg-gradient-to-r from-teal-400 to-blue-500 text-white px-8 py-4 rounded-full font-black shadow-lg w-[80%] text-center flex items-center justify-center gap-2 uppercase tracking-widest mt-4"
+                        >
+                            Agendar VIP
+                            <ArrowRight size={18} />
+                        </a>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 };

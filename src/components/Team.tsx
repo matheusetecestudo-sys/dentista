@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Linkedin, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Linkedin, Award, ChevronLeft, ChevronRight, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const team = [
@@ -9,21 +8,21 @@ const team = [
         role: 'Implantodontista e Cirurgião',
         cro: 'CRO/SP 12345',
         image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        bio: 'Especialista em reabilitação oral complexa com mais de 15 anos de experiência em implantes e cirurgia guiada.'
+        bio: 'Mestre em reabilitação oral de alta complexidade. Mais de 15 anos transformando vidas com implantes de carga imediata e cirurgia guiada robótica.'
     },
     {
         name: 'Dra. Camila Torres',
-        role: 'Ortodontista e Harmonização',
+        role: 'Ortodontia Digital e Estética',
         cro: 'CRO/SP 67890',
         image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        bio: 'Mestre em Ortodontia Digital e referência em tratamentos estéticos faciais e alinhadores invisíveis.'
+        bio: 'Referência nacional em Invisalign e arquitetura facial. Desenha sorrisos perfeitos utilizando escaneamento 3D de precisão cirúrgica.'
     },
     {
         name: 'Dr. Lucas Ferreira',
-        role: 'Endodontia e Clínica Geral',
+        role: 'Endodontia Microscópica',
         cro: 'CRO/SP 11223',
         image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        bio: 'Focado em tratamentos sem dor, utilizando microscopia operatória para máxima precisão nos canais.'
+        bio: 'Pioneiro em tratamentos de canal em sessão única sem dor, utilizando microscopia operatória de última geração.'
     }
 ];
 
@@ -34,31 +33,60 @@ const Team = () => {
     const prev = () => setCurrentIndex((prev) => (prev - 1 + team.length) % team.length);
 
     return (
-        <section className="bg-medical-light py-20 overflow-hidden" id="equipe">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                    <div className="max-w-2xl">
-                        <span className="text-medical-secondary font-semibold uppercase tracking-wider text-sm">Nossa História & Equipe</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-medical-primary mt-2">Tradição e Inovação em cada detalhe</h2>
-                        <p className="text-gray-600 mt-4 leading-relaxed">
-                            Com mais de 15 anos de excelência, unimos tecnologia de ponta a um corpo clínico altamente especializado para transformar sua experiência odontológica em algo único e humano.
-                        </p>
-                    </div>
+        <section className="bg-white py-32 overflow-hidden relative" id="equipe">
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-30 mix-blend-multiply"></div>
+            
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="text-center mb-24">
+                    <motion.span 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-teal-600 font-bold uppercase tracking-[0.2em] text-sm"
+                    >
+                        Nossa Autoridade
+                    </motion.span>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A1128] mt-4 tracking-tight"
+                    >
+                        Mentes brilhantes por trás de <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">sorrisos perfeitos</span>
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-gray-500 mt-6 max-w-2xl mx-auto text-lg font-medium"
+                    >
+                        Nossos especialistas possuem formações nas melhores instituições do mundo, garantindo um padrão de excelência clínica inigualável.
+                    </motion.p>
                 </div>
 
-                <div className="relative">
+                <div className="relative max-w-7xl mx-auto">
                     <AnimatePresence mode="wait">
                         <motion.div 
                             key={currentIndex}
-                            initial={{ opacity: 0, x: 50, scale: 0.95 }}
-                            animate={{ opacity: 1, x: 0, scale: 1 }}
-                            exit={{ opacity: 0, x: -50, scale: 0.95 }}
-                            transition={{ duration: 0.4, ease: "circOut" }}
-                            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className="grid grid-cols-1 md:grid-cols-3 gap-10"
                         >
                             <div className="hidden md:contents">
                                 {team.map((member, index) => (
-                                    <TeamCard key={index} member={member} />
+                                    <motion.div 
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        key={index}
+                                    >
+                                        <TeamCard member={member} />
+                                    </motion.div>
                                 ))}
                             </div>
                             <div className="md:hidden">
@@ -68,19 +96,12 @@ const Team = () => {
                     </AnimatePresence>
                 </div>
 
-                {/* Arrows BELOW the cards */}
-                <div className="flex justify-center gap-6 mt-12 md:hidden">
-                    <button 
-                        onClick={prev}
-                        className="w-16 h-16 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all shadow-xl active:scale-90"
-                    >
-                        <ChevronLeft size={32} />
+                <div className="flex justify-center gap-4 mt-12 md:hidden">
+                    <button onClick={prev} className="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                        <ChevronLeft size={24} />
                     </button>
-                    <button 
-                        onClick={next}
-                        className="w-16 h-16 rounded-full border-2 border-medical-primary text-medical-primary flex items-center justify-center hover:bg-medical-primary hover:text-white transition-all shadow-xl active:scale-90"
-                    >
-                        <ChevronRight size={32} />
+                    <button onClick={next} className="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                        <ChevronRight size={24} />
                     </button>
                 </div>
             </div>
@@ -89,30 +110,33 @@ const Team = () => {
 };
 
 const TeamCard = ({ member }: { member: any }) => (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group border border-gray-100">
-        <div className="relative overflow-hidden h-80">
+    <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-all duration-500 group border border-gray-100 h-full flex flex-col">
+        <div className="relative overflow-hidden h-[400px]">
             <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover object-top transition-transform duration-[2s] group-hover:scale-105"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-medical-primary/90 to-transparent p-6 pt-20 translate-y-2 group-hover:translate-y-0 transition-transform">
-                <p className="text-white text-sm font-medium flex items-center gap-2">
-                    <Award size={16} className="text-medical-secondary" />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/50 to-transparent p-8 pt-24 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <p className="text-white text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
+                    <Award size={18} className="text-teal-400" />
                     {member.cro}
                 </p>
             </div>
         </div>
-        <div className="p-8">
-            <h3 className="text-xl font-bold text-medical-primary mb-1">{member.name}</h3>
-            <p className="text-medical-secondary font-medium text-sm mb-4 uppercase tracking-wide">{member.role}</p>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+        <div className="p-10 flex-grow flex flex-col bg-gray-50/50">
+            <h3 className="text-2xl font-black text-[#0A1128] mb-2">{member.name}</h3>
+            <p className="text-teal-600 font-bold text-xs mb-6 uppercase tracking-widest">{member.role}</p>
+            <p className="text-gray-500 text-base leading-relaxed mb-8 flex-grow font-medium">
                 {member.bio}
             </p>
-            <div className="flex gap-3">
-                <button className="text-gray-400 hover:text-medical-primary transition-colors">
-                    <Linkedin size={20} />
-                </button>
+            <div className="flex gap-4 pt-6 border-t border-gray-200">
+                <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-[#0A1128] hover:text-white hover:border-[#0A1128] transition-all shadow-sm">
+                    <Linkedin size={18} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-[#0A1128] hover:text-white hover:border-[#0A1128] transition-all shadow-sm">
+                    <Instagram size={18} />
+                </a>
             </div>
         </div>
     </div>
