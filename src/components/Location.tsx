@@ -3,9 +3,9 @@ import { MapPin, Clock } from 'lucide-react';
 
 const Location = () => {
     return (
-        <section id="localizacao" className="py-24 bg-white relative">
+        <section id="localizacao" className="py-16 bg-white relative">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
                     <motion.span 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}

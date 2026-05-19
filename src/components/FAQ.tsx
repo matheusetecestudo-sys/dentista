@@ -29,7 +29,7 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="bg-gray-50 py-32" id="faq">
+        <section className="bg-gray-50 py-16 sm:py-20" id="faq">
             <div className="container mx-auto px-6 max-w-4xl">
                 <div className="text-center mb-16">
                     <motion.span 
@@ -82,7 +82,7 @@ const FAQ = () => {
                                         transition={{ duration: 0.25, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="px-8 pb-6 text-gray-500 leading-relaxed font-medium">
+                                        <div className="px-8 pb-6 text-gray-700 leading-relaxed font-semibold">
                                             <div className="w-full h-px bg-gray-100 mb-6"></div>
                                             {faq.answer}
                                         </div>

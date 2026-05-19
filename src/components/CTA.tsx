@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const CTA = () => {
     return (
-        <section className="bg-[#02050A] relative overflow-hidden py-24 sm:py-32 text-white" id="agendar">
+        <section className="bg-[#02050A] relative overflow-hidden py-16 sm:py-20 text-white" id="agendar">
             {/* Efeitos de luz no fundo para sofisticação */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] to-transparent pointer-events-none"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.06),transparent_70%)] blur-[80px] sm:blur-[120px] -z-10"></div>

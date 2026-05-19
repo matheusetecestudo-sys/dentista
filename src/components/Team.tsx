@@ -40,7 +40,7 @@ const Team = () => {
     };
 
     return (
-        <section className="bg-white py-24 sm:py-32 overflow-hidden relative" id="equipe">
+        <section className="bg-white py-16 sm:py-20 overflow-hidden relative" id="equipe">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-30 mix-blend-multiply"></div>
             
             <div className="container mx-auto px-6 relative z-10">
@@ -188,7 +188,7 @@ const TeamCard = ({ member }: { member: any }) => (
         <div className="p-6 sm:p-10 flex-grow flex flex-col bg-gray-50/50">
             <h3 className="text-xl sm:text-2xl font-black text-[#0A1128] mb-1 sm:mb-2">{member.name}</h3>
             <p className="text-teal-600 font-bold text-xs mb-4 sm:mb-6 uppercase tracking-widest">{member.role}</p>
-            <p className="text-gray-500 text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-8 flex-grow font-medium">
+            <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-8 flex-grow font-semibold">
                 {member.bio}
             </p>
             <div className="flex gap-4 pt-4 sm:pt-6 border-t border-gray-200">

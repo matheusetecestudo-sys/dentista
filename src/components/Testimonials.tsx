@@ -37,7 +37,7 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="bg-gray-50 py-24 sm:py-32 overflow-hidden" id="depoimentos">
+        <section className="bg-gray-50 py-16 sm:py-20 overflow-hidden" id="depoimentos">
             <div className="container mx-auto px-6">
                 
                 {/* Cabeçalho */}
@@ -165,7 +165,7 @@ const TestimonialCard = ({ review, delay }: { review: any, delay: number }) => (
             ))}
         </div>
 
-        <p className="text-[#0A1128]/80 text-sm sm:text-base md:text-lg leading-relaxed flex-grow mb-8 sm:mb-12 font-medium relative z-10">
+        <p className="text-[#0A1128] text-sm sm:text-base md:text-lg leading-relaxed flex-grow mb-8 sm:mb-12 font-semibold relative z-10">
             "{review.text}"
         </p>
 

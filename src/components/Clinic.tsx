@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Clinic = () => {
     return (
-        <section className="bg-[#02050A] text-white py-32 overflow-hidden relative" id="clinica">
+        <section className="bg-[#02050A] text-white py-16 sm:py-20 overflow-hidden relative" id="clinica">
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.1),transparent_70%)] blur-[100px] -z-10"></div>
             
             <div className="container mx-auto px-6 max-w-7xl">
@@ -32,7 +32,7 @@ const Clinic = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-white/60 mt-6 text-base sm:text-lg font-medium leading-relaxed"
+                        className="text-white/75 mt-6 text-base sm:text-lg font-medium leading-relaxed"
                     >
                         Unimos a precisão da engenharia suíça com a excelência de um atendimento totalmente humanizado. Uma experiência desenhada para quem não aceita nada menos que a perfeição.
                     </motion.p>
@@ -103,7 +103,7 @@ const Clinic = () => {
                                 <div className="text-teal-400 mt-0.5">{item.icon}</div>
                                 <div>
                                     <h3 className="text-base font-bold text-white/90">{item.title}</h3>
-                                    <p className="text-white/50 text-xs sm:text-sm font-medium mt-1 leading-relaxed">
+                                    <p className="text-white/70 text-xs sm:text-sm font-semibold mt-1 leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </div>
