@@ -6,19 +6,19 @@ const cases = [
     {
         id: 1,
         title: 'Lentes de Contato Dental',
-        desc: 'Harmonização estética de alta precisão com lentes de porcelana pura. Correção milimétrica de desalinhamentos leves, formato e cor para um resultado perfeitamente natural e duradouro.',
+        desc: 'Sorriso alinhado, harmônico e natural com facetas de porcelana pura.',
         img: '/exemplo01.png',
     },
     {
         id: 2,
         title: 'Implante Total Cerâmico',
-        desc: 'Reabilitação oral completa (Protocolo) sobre implantes importados de alta durabilidade. Devolução integral da capacidade mastigatória, suporte muscular e estética de um sorriso jovem.',
+        desc: 'Reabilitação total fixa para devolver mastigação e suporte labial.',
         img: '/exemplo 03.png',
     },
     {
         id: 3,
         title: 'Clareamento Avançado',
-        desc: 'Clareamento com tecnologia híbrida de consultório e home-care. Remoção profunda de manchas e pigmentações acumuladas ao longo dos anos, com proteção total da sensibilidade dentária.',
+        desc: 'Remoção de manchas profundas e resgate do branco natural dos dentes.',
         img: '/exemplo 02.png',
     },
 ];
@@ -31,11 +31,11 @@ const BeforeAfter = () => {
     const prev = () => setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
 
     return (
-        <section className="bg-white py-32 overflow-hidden" id="resultados">
+        <section className="bg-white py-24 sm:py-32 overflow-hidden" id="resultados">
             <div className="container mx-auto px-6">
                 
                 {/* Cabeçalho Centralizado Padronizado */}
-                <div className="text-center mb-20 max-w-3xl mx-auto">
+                <div className="text-center mb-16 sm:mb-20 max-w-3xl mx-auto">
                     <motion.span 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const BeforeAfter = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-500 mt-6 text-base sm:text-lg font-medium leading-relaxed"
+                        className="text-gray-500 mt-6 text-sm sm:text-base md:text-lg font-medium leading-relaxed"
                     >
                         Resultados reais de pacientes que recuperaram a autoestima e a segurança ao sorrir. Cada transformação é planejada digitalmente e executada com precisão absoluta.
                     </motion.p>
@@ -160,27 +160,36 @@ const BeforeAfter = () => {
 const CaseCard = ({ item, onClick }: { item: any, onClick: () => void }) => (
     <div
         onClick={onClick}
-        className="relative rounded-[2.5rem] overflow-hidden cursor-pointer shadow-[0_15px_45px_rgba(0,0,0,0.06)] border border-gray-100 hover:border-teal-200 transition-all duration-500 group h-[480px] bg-gray-50 flex flex-col justify-end"
+        className="rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden cursor-pointer shadow-[0_15px_45px_rgba(0,0,0,0.04)] border border-gray-100 hover:border-teal-200 transition-all duration-500 group bg-white flex flex-col"
     >
-        {/* Imagem de Fundo de Alta Qualidade */}
-        <img 
-            src={item.img} 
-            alt={item.title} 
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" 
-        />
-        
-        {/* Overlay escuro de alta legibilidade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#02050A] via-[#02050A]/35 to-transparent opacity-85 group-hover:opacity-90 transition-opacity duration-500"></div>
+        {/* Imagem em proporção perfeita (rosto completo, sem cortes) */}
+        <div className="w-full aspect-[3/2] overflow-hidden relative bg-gray-50">
+            <img 
+                src={item.img} 
+                alt={item.title} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103" 
+            />
+            {/* Lente de zoom sutil no hover */}
+            <div className="absolute inset-0 bg-black/5 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-white/95 text-[#0A1128] flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all duration-300 shadow-md">
+                    <ZoomIn className="w-5 h-5 text-teal-600" />
+                </div>
+            </div>
+        </div>
 
-        {/* Conteúdo do Card */}
-        <div className="relative z-10 p-8 sm:p-10 text-white transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
-            <h3 className="text-2xl sm:text-3xl font-black mb-3 leading-tight tracking-tight">{item.title}</h3>
-            <p className="text-xs sm:text-sm text-white/70 line-clamp-2 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75 font-medium leading-relaxed">
-                {item.desc}
-            </p>
-            <div className="flex items-center text-teal-400 text-xs sm:text-sm font-black uppercase tracking-widest gap-2">
-                <ZoomIn className="w-5 h-5" /> 
+        {/* Informações detalhadas e alinhadas abaixo da imagem (não obstrui o rosto) */}
+        <div className="p-6 sm:p-8 flex flex-col flex-grow justify-between bg-white">
+            <div>
+                <h3 className="text-lg sm:text-xl font-black text-[#0A1128] mb-2 leading-tight group-hover:text-teal-600 transition-colors">
+                    {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-400 font-medium leading-relaxed mb-4 line-clamp-2">
+                    {item.desc}
+                </p>
+            </div>
+            <div className="flex items-center text-teal-600 text-xs sm:text-sm font-black uppercase tracking-widest gap-2">
                 <span>Ampliar Resultado</span>
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </div>
         </div>
     </div>
