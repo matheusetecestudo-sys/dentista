@@ -26,9 +26,16 @@ const cases = [
 const BeforeAfter = () => {
     const [selectedId, setSelectedId] = useState<number | null>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [direction, setDirection] = useState(0);
 
-    const next = () => setCurrentIndex((prev) => (prev + 1) % cases.length);
-    const prev = () => setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
+    const next = () => {
+        setDirection(1);
+        setCurrentIndex((prev) => (prev + 1) % cases.length);
+    };
+    const prev = () => {
+        setDirection(-1);
+        setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
+    };
 
     return (
         <section className="bg-white py-24 sm:py-32 overflow-hidden relative" id="resultados">
@@ -69,42 +76,80 @@ const BeforeAfter = () => {
                 </div>
 
                 <div className="relative max-w-7xl mx-auto">
-                    <AnimatePresence mode="wait">
-                        <motion.div 
-                            key={currentIndex}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                        >
-                            <div className="hidden md:contents">
-                                {cases.map((item, i) => (
-                                    <motion.div 
-                                        initial={{ opacity: 0, y: 30 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1 }}
-                                        key={item.id}
-                                    >
-                                        <CaseCard item={item} onClick={() => setSelectedId(item.id)} />
-                                    </motion.div>
-                                ))}
-                            </div>
-                            <div className="md:hidden">
-                                <CaseCard item={cases[currentIndex]} onClick={() => setSelectedId(cases[currentIndex].id)} />
-                            </div>
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* Grid Desktop (Escondido no mobile, exibido em md+) */}
+                    <div className="hidden md:grid grid-cols-3 gap-8">
+                        {cases.map((item, i) => (
+                            <motion.div 
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                key={item.id}
+                            >
+                                <CaseCard item={item} onClick={() => setSelectedId(item.id)} />
+                            </motion.div>
+                        ))}
+                    </div>
 
-                    {/* Setas de Controle no Mobile */}
-                    <div className="flex justify-center gap-4 mt-12 md:hidden">
-                        <button onClick={prev} className="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 hover:border-teal-200 transition-all shadow-sm">
-                            <ChevronLeft size={24} />
-                        </button>
-                        <button onClick={next} className="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 hover:border-teal-200 transition-all shadow-sm">
-                            <ChevronRight size={24} />
-                        </button>
+                    {/* Carrossel Mobile (Escondido no desktop, exibido sob md) */}
+                    <div className="md:hidden">
+                        <div className="overflow-hidden relative min-h-[380px] flex items-center justify-center">
+                            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                                <motion.div 
+                                    key={currentIndex}
+                                    custom={direction}
+                                    variants={{
+                                        enter: (dir: number) => ({
+                                            x: dir > 0 ? '100%' : '-100%',
+                                            opacity: 0
+                                        }),
+                                        center: {
+                                            x: 0,
+                                            opacity: 1
+                                        },
+                                        exit: (dir: number) => ({
+                                            x: dir < 0 ? '100%' : '-100%',
+                                            opacity: 0
+                                        })
+                                    }}
+                                    initial="enter"
+                                    animate="center"
+                                    exit="exit"
+                                    transition={{
+                                        x: { type: "spring", stiffness: 300, damping: 30 },
+                                        opacity: { duration: 0.2 }
+                                    }}
+                                    className="w-full"
+                                >
+                                    <CaseCard item={cases[currentIndex]} onClick={() => setSelectedId(cases[currentIndex].id)} />
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Paginação por Dots */}
+                        <div className="flex justify-center gap-2.5 mt-8">
+                            {cases.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => {
+                                        setDirection(idx > currentIndex ? 1 : -1);
+                                        setCurrentIndex(idx);
+                                    }}
+                                    className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-teal-500' : 'w-2.5 bg-gray-200'}`}
+                                    aria-label={`Ir para slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Setas de Controle */}
+                        <div className="flex justify-center gap-4 mt-8">
+                            <button onClick={prev} className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                                <ChevronLeft size={20} />
+                            </button>
+                            <button onClick={next} className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                                <ChevronRight size={20} />
+                            </button>
+                        </div>
                     </div>
                 </div>
 

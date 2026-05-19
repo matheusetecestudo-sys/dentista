@@ -25,14 +25,23 @@ const reviews = [
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [direction, setDirection] = useState(0);
 
-    const next = () => setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    const prev = () => setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+    const next = () => {
+        setDirection(1);
+        setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    };
+    const prev = () => {
+        setDirection(-1);
+        setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+    };
 
     return (
-        <section className="bg-gray-50 py-32 overflow-hidden" id="depoimentos">
+        <section className="bg-gray-50 py-24 sm:py-32 overflow-hidden" id="depoimentos">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-20 max-w-3xl mx-auto">
+                
+                {/* Cabeçalho */}
+                <div className="text-center mb-16 sm:mb-20 max-w-3xl mx-auto">
                     <motion.span 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -46,43 +55,82 @@ const Testimonials = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-black text-[#0A1128] mt-4 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0A1128] mt-4 tracking-tight"
                     >
                         A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">excelência</span>
                     </motion.h2>
                 </div>
 
-                <div className="relative">
-                    <AnimatePresence mode="wait">
-                        <motion.div 
-                            key={currentIndex}
-                            initial={{ opacity: 0, x: 50, filter: 'blur(5px)' }}
-                            animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-                            exit={{ opacity: 0, x: -50, filter: 'blur(5px)' }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                        >
-                            <div className="hidden md:contents">
-                                {reviews.map((review, index) => (
-                                    <TestimonialCard key={index} review={review} delay={index * 0.1} />
-                                ))}
-                            </div>
-                            <div className="md:hidden flex justify-center">
-                                <TestimonialCard review={reviews[currentIndex]} delay={0} />
-                            </div>
-                        </motion.div>
-                    </AnimatePresence>
+                <div className="relative max-w-7xl mx-auto">
+                    {/* Grid Desktop (Escondido no mobile, exibido em md+) */}
+                    <div className="hidden md:grid grid-cols-3 gap-8">
+                        {reviews.map((review, index) => (
+                            <TestimonialCard key={index} review={review} delay={index * 0.1} />
+                        ))}
+                    </div>
+
+                    {/* Carrossel Mobile (Escondido no desktop, exibido sob md) */}
+                    <div className="md:hidden">
+                        <div className="overflow-hidden relative min-h-[380px] flex items-center justify-center">
+                            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                                <motion.div 
+                                    key={currentIndex}
+                                    custom={direction}
+                                    variants={{
+                                        enter: (dir: number) => ({
+                                            x: dir > 0 ? '100%' : '-100%',
+                                            opacity: 0
+                                        }),
+                                        center: {
+                                            x: 0,
+                                            opacity: 1
+                                        },
+                                        exit: (dir: number) => ({
+                                            x: dir < 0 ? '100%' : '-100%',
+                                            opacity: 0
+                                        })
+                                    }}
+                                    initial="enter"
+                                    animate="center"
+                                    exit="exit"
+                                    transition={{
+                                        x: { type: "spring", stiffness: 300, damping: 30 },
+                                        opacity: { duration: 0.2 }
+                                    }}
+                                    className="w-full"
+                                >
+                                    <TestimonialCard review={reviews[currentIndex]} delay={0} />
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Paginação por Dots */}
+                        <div className="flex justify-center gap-2.5 mt-8">
+                            {reviews.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => {
+                                        setDirection(idx > currentIndex ? 1 : -1);
+                                        setCurrentIndex(idx);
+                                    }}
+                                    className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-teal-500' : 'w-2.5 bg-gray-200'}`}
+                                    aria-label={`Ir para slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Setas de Controle */}
+                        <div className="flex justify-center gap-4 mt-8">
+                            <button onClick={prev} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                                <ChevronLeft size={20} />
+                            </button>
+                            <button onClick={next} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                                <ChevronRight size={20} />
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Arrows Mobile */}
-                <div className="flex justify-center gap-6 mt-12 md:hidden">
-                    <button onClick={prev} className="w-16 h-16 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
-                        <ChevronLeft size={28} />
-                    </button>
-                    <button onClick={next} className="w-16 h-16 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-md">
-                        <ChevronRight size={28} />
-                    </button>
-                </div>
             </div>
         </section>
     );
@@ -94,27 +142,27 @@ const TestimonialCard = ({ review, delay }: { review: any, delay: number }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay }}
-        className="bg-white p-12 rounded-[2.5rem] relative border border-blue-500/20 hover:border-blue-500/80 transition-all duration-500 h-full flex flex-col shadow-[0_10px_35px_rgba(59,130,246,0.03)] hover:shadow-[0_20px_50px_rgba(59,130,246,0.12)] group"
+        className="bg-white p-8 sm:p-12 rounded-[2rem] sm:rounded-[2.5rem] relative border border-blue-500/10 hover:border-teal-500/45 transition-all duration-500 h-full flex flex-col shadow-[0_10px_35px_rgba(59,130,246,0.02)] hover:shadow-[0_20px_50px_rgba(13,148,136,0.06)] group"
     >
-        <div className="absolute top-10 right-10 text-blue-50 group-hover:text-blue-100/50 transition-colors duration-500">
-            <Quote size={64} className="transform rotate-180" />
+        <div className="absolute top-8 right-8 sm:top-10 sm:right-10 text-blue-50 group-hover:text-teal-100/30 transition-colors duration-500">
+            <Quote size={48} className="transform rotate-180" />
         </div>
 
-        <div className="flex gap-2 mb-8 relative z-10">
+        <div className="flex gap-1.5 mb-6 sm:mb-8 relative z-10">
             {[...Array(5)].map((_, i) => (
-                <Star key={i} size={18} className="text-amber-400 fill-current" />
+                <Star key={i} size={16} className="text-yellow-400 fill-current" />
             ))}
         </div>
 
-        <p className="text-[#0A1128]/80 text-lg leading-relaxed flex-grow mb-12 font-medium relative z-10">
+        <p className="text-[#0A1128]/80 text-sm sm:text-base md:text-lg leading-relaxed flex-grow mb-8 sm:mb-12 font-medium relative z-10">
             "{review.text}"
         </p>
 
-        <div className="flex items-center gap-5 pt-8 border-t border-gray-100 relative z-10">
-            <img src={review.avatar} alt={review.name} className="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white" />
+        <div className="flex items-center gap-4 pt-6 sm:pt-8 border-t border-gray-100 relative z-10">
+            <img src={review.avatar} alt={review.name} className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shadow-sm border-2 border-white" />
             <div>
-                <h4 className="font-black text-[#0A1128] text-lg">{review.name}</h4>
-                <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mt-1">{review.city}</p>
+                <h4 className="font-black text-[#0A1128] text-sm sm:text-base">{review.name}</h4>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-teal-600 mt-1">{review.city}</p>
             </div>
         </div>
     </motion.div>
