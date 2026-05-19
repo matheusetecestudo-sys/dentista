@@ -7,9 +7,9 @@ const Hero = () => {
             {/* Imagem de Fundo Atmosférica de um Espaço Clínico Premium */}
             <div className="absolute inset-0 z-0 select-none pointer-events-none">
                 <img
-                    src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=95"
+                    src="/banner01 (4).png"
                     alt="Clínica DUNO Odontologia"
-                    className="w-full h-full object-cover opacity-20 object-center filter grayscale contrast-125"
+                    className="w-full h-full object-cover opacity-45 object-center"
                 />
                 
                 {/* Degradê de alto contraste e sofisticação para isolar o texto */}
