@@ -171,23 +171,13 @@ const BeforeAfter = () => {
 
 const CaseCard = ({ item }: { item: any }) => (
     <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 group border border-gray-100 h-full flex flex-col">
-        {/* Imagem em Proporção e Altura Idêntica à dos Profissionais */}
-        <div className="relative overflow-hidden h-[300px] sm:h-[400px] bg-gray-50 border-b border-gray-100">
+        {/* Imagem em Proporção 3:2 Constante - Sem cortes do Rosto */}
+        <div className="relative overflow-hidden w-full aspect-[3/2] bg-gray-50 border-b border-gray-100">
             <img
                 src={item.img}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
             />
-            {/* Badges Antes e Depois */}
-            <div className="absolute top-4 left-4 bg-[#02050A]/75 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/10 shadow-sm z-10">
-                Antes
-            </div>
-            <div className="absolute top-4 right-4 bg-teal-500/85 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-teal-400/20 shadow-sm z-10">
-                Depois
-            </div>
-            
-            {/* Divisória Vertical sutil no meio */}
-            <div className="absolute inset-y-0 left-1/2 w-px bg-white/30 pointer-events-none shadow-sm z-10"></div>
             
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/50 to-transparent p-6 sm:p-8 pt-16 sm:pt-24 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <p className="text-white text-xs sm:text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
