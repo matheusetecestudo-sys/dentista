@@ -6,20 +6,20 @@ const cases = [
     {
         id: 1,
         title: 'Lentes de Contato Dental',
-        desc: 'Reabilitação estética superior com lentes de porcelana ultra-finas. Correção milimétrica de formato, alinhamento e cor para máxima naturalidade.',
-        img: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90',
+        desc: 'Harmonização estética de alta precisão com lentes de porcelana pura. Correção milimétrica de desalinhamentos leves, formato e cor para um resultado perfeitamente natural e duradouro.',
+        img: '/exemplo01.png',
     },
     {
         id: 2,
         title: 'Implante Total Cerâmico',
-        desc: 'Protocolo de reabilitação oral completa utilizando implantes de zircônia importados. Devolução perfeita da mastigação e do sorriso estético.',
-        img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90',
+        desc: 'Reabilitação oral completa (Protocolo) sobre implantes importados de alta durabilidade. Devolução integral da capacidade mastigatória, suporte muscular e estética de um sorriso jovem.',
+        img: '/exemplo 03.png',
     },
     {
         id: 3,
         title: 'Clareamento Avançado',
-        desc: 'Resultado brilhante de clareamento a laser combinado com moldeira personalizada. Dentes visivelmente mais brancos sem gerar sensibilidade.',
-        img: 'https://images.unsplash.com/photo-1595475243560-f9e558603463?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90',
+        desc: 'Clareamento com tecnologia híbrida de consultório e home-care. Remoção profunda de manchas e pigmentações acumuladas ao longo dos anos, com proteção total da sensibilidade dentária.',
+        img: '/exemplo 02.png',
     },
 ];
 
