@@ -43,6 +43,8 @@ const Navbar = () => {
                         </a>
                         <a
                             href="https://wa.me/5511992876219"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-white text-[#0A1128] px-5 py-2.5 rounded-full font-black shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 text-xs flex items-center gap-2 group uppercase tracking-wider"
                         >
                             Agendar Consulta
@@ -76,6 +78,8 @@ const Navbar = () => {
                         ))}
                         <a 
                             href="https://wa.me/5511992876219" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-gradient-to-r from-teal-400 to-blue-500 text-white px-8 py-4 rounded-full font-black shadow-lg w-[80%] text-center flex items-center justify-center gap-2 uppercase tracking-widest mt-4"
                         >
                             Agendar Consulta

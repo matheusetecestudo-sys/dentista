@@ -80,7 +80,7 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} DUNO Odontologia. Todos os direitos reservados.
                     </p>
                     <p className="text-white/30 text-xs font-medium">
-                        CRO/SP: 123456 | Resp. Técnico: Dr. Nome Sobrenome
+                        Resp. Técnico: Dr. Ricardo Mendes | CRO/SP 12345
                     </p>
                 </div>
             </div>

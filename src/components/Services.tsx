@@ -88,7 +88,7 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05, duration: 0.5 }}
-                            className="bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 hover:border-teal-100 hover:shadow-[0_20px_40px_rgba(13,148,136,0.08)] transition-all duration-500 flex flex-col group cursor-pointer"
+                            className="bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 hover:border-teal-100 hover:shadow-[0_20px_40px_rgba(13,148,136,0.08)] transition-all duration-500 flex flex-col h-full group cursor-pointer"
                         >
                             {/* Imagem (Proporção otimizada para encaixar perfeitamente) */}
                             <div className="h-32 xs:h-40 sm:h-52 md:h-64 overflow-hidden relative">

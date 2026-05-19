@@ -97,7 +97,18 @@ const Testimonials = () => {
                                         x: { type: "spring", stiffness: 300, damping: 30 },
                                         opacity: { duration: 0.2 }
                                     }}
-                                    className="w-full"
+                                    drag="x"
+                                    dragConstraints={{ left: 0, right: 0 }}
+                                    dragElastic={0.7}
+                                    onDragEnd={(_, info) => {
+                                        const swipeThreshold = 50;
+                                        if (info.offset.x < -swipeThreshold) {
+                                            next();
+                                        } else if (info.offset.x > swipeThreshold) {
+                                            prev();
+                                        }
+                                    }}
+                                    className="w-full cursor-grab active:cursor-grabbing touch-pan-y"
                                 >
                                     <TestimonialCard review={reviews[currentIndex]} delay={0} />
                                 </motion.div>

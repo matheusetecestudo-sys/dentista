@@ -84,6 +84,8 @@ const Hero = () => {
                     <div className="pt-2 sm:pt-4">
                         <a 
                             href="https://wa.me/5511992876219" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group relative overflow-hidden bg-white text-[#02050A] px-7 sm:px-9 py-3.5 sm:py-4 rounded-full font-black uppercase tracking-widest shadow-[0_10px_35px_rgba(255,255,255,0.05)] hover:shadow-[0_15px_40px_rgba(20,184,166,0.35)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 text-[10px] sm:text-xs md:text-sm border border-white/10 hover:border-teal-400/35"
                         >
                             <span className="relative z-10">Agendar Consulta</span>

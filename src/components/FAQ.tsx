@@ -79,11 +79,13 @@ const FAQ = () => {
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="px-8 pb-6 text-gray-500 leading-relaxed font-medium"
+                                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                                        className="overflow-hidden"
                                     >
-                                        <div className="w-full h-px bg-gray-100 mb-6"></div>
-                                        {faq.answer}
+                                        <div className="px-8 pb-6 text-gray-500 leading-relaxed font-medium">
+                                            <div className="w-full h-px bg-gray-100 mb-6"></div>
+                                            {faq.answer}
+                                        </div>
                                     </motion.div>
                                 )}
                             </AnimatePresence>

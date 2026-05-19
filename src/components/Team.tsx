@@ -21,7 +21,7 @@ const team = [
         name: 'Dr. Lucas Ferreira',
         role: 'Endodontia Microscópica',
         cro: 'CRO/SP 11223',
-        image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         bio: 'Pioneiro em tratamentos de canal em sessão única sem dor, utilizando microscopia operatória de última geração.'
     }
 ];
@@ -85,6 +85,7 @@ const Team = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
                                 key={index}
+                                className="h-full"
                             >
                                 <TeamCard member={member} />
                             </motion.div>
@@ -119,7 +120,18 @@ const Team = () => {
                                         x: { type: "spring", stiffness: 300, damping: 30 },
                                         opacity: { duration: 0.2 }
                                     }}
-                                    className="w-full"
+                                    drag="x"
+                                    dragConstraints={{ left: 0, right: 0 }}
+                                    dragElastic={0.7}
+                                    onDragEnd={(_, info) => {
+                                        const swipeThreshold = 50;
+                                        if (info.offset.x < -swipeThreshold) {
+                                            next();
+                                        } else if (info.offset.x > swipeThreshold) {
+                                            prev();
+                                        }
+                                    }}
+                                    className="w-full cursor-grab active:cursor-grabbing touch-pan-y"
                                 >
                                     <TeamCard member={team[currentIndex]} />
                                 </motion.div>
