@@ -1,23 +1,26 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Award } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const cases = [
     {
         id: 1,
         title: 'Lentes de Contato Dental',
+        category: 'Odontologia Estética',
         desc: 'Sorriso alinhado, harmônico e natural com facetas de porcelana pura de espessura ultrafina.',
         img: '/exemplo01.png',
     },
     {
         id: 2,
         title: 'Implante Total Cerâmico',
+        category: 'Reabilitação Oral',
         desc: 'Reabilitação total fixa sobre implantes para devolver mastigação, fonética e suporte labial.',
         img: '/exemplo 03.png',
     },
     {
         id: 3,
         title: 'Clareamento Avançado',
+        category: 'Estética Dental',
         desc: 'Remoção de manchas profundas e resgate do branco natural dos dentes de forma segura.',
         img: '/exemplo 02.png',
     },
@@ -38,14 +41,12 @@ const BeforeAfter = () => {
 
     return (
         <section className="bg-white py-16 sm:py-20 overflow-hidden relative" id="resultados">
-            {/* Decorações premium de fundo - Glows */}
-            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.04),transparent_70%)] blur-[100px] pointer-events-none -z-10 animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.04),transparent_70%)] blur-[100px] pointer-events-none -z-10"></div>
-
-            <div className="container mx-auto px-6">
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-30 mix-blend-multiply"></div>
+            
+            <div className="container mx-auto px-6 relative z-10">
                 
-                {/* Cabeçalho Centralizado Padronizado */}
-                <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
+                {/* Cabeçalho da Seção - Idêntico ao da Equipe */}
+                <div className="text-center mb-16 sm:mb-24">
                     <motion.span 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +60,7 @@ const BeforeAfter = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-black text-[#0A1128] mt-4 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0A1128] mt-4 tracking-tight"
                     >
                         Transformações <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">Reais</span>
                     </motion.h2>
@@ -68,21 +69,21 @@ const BeforeAfter = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-600 mt-6 text-sm sm:text-base md:text-lg font-medium leading-relaxed"
+                        className="text-gray-500 mt-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-medium"
                     >
                         Resultados reais de pacientes que recuperaram a autoestima e a segurança ao sorrir. Cada transformação é planejada digitalmente e executada com precisão absoluta.
                     </motion.p>
                 </div>
 
                 <div className="relative max-w-7xl mx-auto">
-                    {/* Grid Desktop (Escondido no mobile, exibido em md+) */}
-                    <div className="hidden md:grid grid-cols-3 gap-8">
-                        {cases.map((item, i) => (
+                    {/* Grid Desktop (Escondido no mobile, exibido em md+ - Mesma Configuração dos Profissionais) */}
+                    <div className="hidden md:grid grid-cols-3 gap-10">
+                        {cases.map((item, index) => (
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ delay: index * 0.1 }}
                                 key={item.id}
                                 className="h-full"
                             >
@@ -91,9 +92,9 @@ const BeforeAfter = () => {
                         ))}
                     </div>
 
-                    {/* Carrossel Mobile (Escondido no desktop, exibido sob md) */}
+                    {/* Carrossel Mobile (Escondido no desktop, exibido sob md - Mesma Configuração dos Profissionais) */}
                     <div className="md:hidden">
-                        <div className="overflow-hidden relative min-h-[380px] flex items-center justify-center">
+                        <div className="overflow-hidden relative min-h-[500px] flex items-center justify-center">
                             <AnimatePresence initial={false} custom={direction} mode="popLayout">
                                 <motion.div 
                                     key={currentIndex}
@@ -137,7 +138,7 @@ const BeforeAfter = () => {
                             </AnimatePresence>
                         </div>
 
-                        {/* Paginação por Dots */}
+                        {/* Paginação por Dots - Mesma Configuração dos Profissionais */}
                         <div className="flex justify-center gap-2.5 mt-8">
                             {cases.map((_, idx) => (
                                 <button
@@ -152,7 +153,7 @@ const BeforeAfter = () => {
                             ))}
                         </div>
 
-                        {/* Setas de Controle */}
+                        {/* Setas de Controle - Mesma Configuração dos Profissionais */}
                         <div className="flex justify-center gap-4 mt-8">
                             <button onClick={prev} className="w-14 h-14 rounded-full bg-gray-50 border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
                                 <ChevronLeft size={20} />
@@ -169,45 +170,55 @@ const BeforeAfter = () => {
 };
 
 const CaseCard = ({ item }: { item: any }) => (
-    <div className="p-[1px] bg-gradient-to-br from-teal-500/10 via-transparent to-blue-500/10 rounded-[2rem] sm:rounded-[2.5rem] transition-all duration-500 hover:from-teal-400 hover:to-blue-500 group shadow-[0_15px_45px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(20,184,166,0.12)] h-full flex flex-col">
-        <div className="rounded-[1.95rem] sm:rounded-[2.45rem] overflow-hidden bg-white flex flex-col h-full flex-grow">
-            {/* Imagem em proporção perfeita (rosto completo, sem cortes) */}
-            <div className="w-full aspect-[3/2] overflow-hidden relative bg-gray-50 border-b border-gray-100">
-                <img 
-                    src={item.img} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103" 
-                />
-                {/* Badges Antes e Depois */}
-                <div className="absolute top-3.5 left-3.5 bg-[#02050A]/75 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
-                    Antes
-                </div>
-                <div className="absolute top-3.5 right-3.5 bg-teal-500/85 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-teal-400/20 shadow-sm">
-                    Depois
-                </div>
-                {/* Divisória Vertical sutil no meio */}
-                <div className="absolute inset-y-0 left-1/2 w-px bg-white/30 pointer-events-none shadow-sm"></div>
+    <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 group border border-gray-100 h-full flex flex-col">
+        {/* Imagem em Proporção e Altura Idêntica à dos Profissionais */}
+        <div className="relative overflow-hidden h-[300px] sm:h-[400px] bg-gray-50 border-b border-gray-100">
+            <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+            />
+            {/* Badges Antes e Depois */}
+            <div className="absolute top-4 left-4 bg-[#02050A]/75 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/10 shadow-sm z-10">
+                Antes
             </div>
-
-            {/* Informações detalhadas e alinhadas abaixo da imagem (não obstrui o rosto) */}
-            <div className="p-6 sm:p-8 flex flex-col flex-grow justify-between bg-white">
-                <div>
-                    <h3 className="text-lg sm:text-xl font-black text-[#0A1128] mb-3 leading-tight group-hover:text-teal-600 transition-colors">
-                        {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-700 font-semibold leading-relaxed mb-6">
-                        {item.desc}
-                    </p>
-                </div>
-                
+            <div className="absolute top-4 right-4 bg-teal-500/85 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-teal-400/20 shadow-sm z-10">
+                Depois
+            </div>
+            
+            {/* Divisória Vertical sutil no meio */}
+            <div className="absolute inset-y-0 left-1/2 w-px bg-white/30 pointer-events-none shadow-sm z-10"></div>
+            
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/50 to-transparent p-6 sm:p-8 pt-16 sm:pt-24 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <p className="text-white text-xs sm:text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
+                    <Award size={16} className="text-teal-400" />
+                    Caso Clínico {item.id}
+                </p>
+            </div>
+        </div>
+        
+        {/* Conteúdo Detalhado - Mesma Configuração de Espaçamento e Fundo Cinza Separado dos Profissionais */}
+        <div className="p-6 sm:p-10 flex-grow flex flex-col bg-gray-50/50">
+            <h3 className="text-xl sm:text-2xl font-black text-[#0A1128] mb-1 sm:mb-2 leading-tight group-hover:text-teal-600 transition-colors">
+                {item.title}
+            </h3>
+            <p className="text-teal-600 font-bold text-xs mb-4 sm:mb-6 uppercase tracking-widest">
+                {item.category}
+            </p>
+            <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-8 flex-grow font-semibold">
+                {item.desc}
+            </p>
+            
+            {/* Linha Divisória e Botão de Ação Idêntico ao Estilo dos Profissionais */}
+            <div className="pt-4 sm:pt-6 border-t border-gray-200">
                 <a 
                     href={`https://wa.me/5511992876219?text=Olá! Gostaria de ter um resultado incrível como o do caso de ${encodeURIComponent(item.title)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-teal-50 text-teal-700 py-3.5 px-6 rounded-2xl font-bold transition-all duration-300 w-full uppercase tracking-wider text-xs sm:text-sm group-hover:bg-teal-600 group-hover:text-white"
+                    className="inline-flex items-center justify-center bg-white border border-gray-200 text-[#0A1128] hover:bg-[#0A1128] hover:text-white hover:border-[#0A1128] py-3.5 px-6 rounded-2xl font-bold transition-all duration-300 w-full uppercase tracking-wider text-xs sm:text-sm shadow-sm gap-2"
                 >
                     <span>Quero este Sorriso</span>
-                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4" />
                 </a>
             </div>
         </div>
