@@ -31,7 +31,11 @@ const BeforeAfter = () => {
     const prev = () => setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
 
     return (
-        <section className="bg-white py-24 sm:py-32 overflow-hidden" id="resultados">
+        <section className="bg-white py-24 sm:py-32 overflow-hidden relative" id="resultados">
+            {/* Decorações premium de fundo */}
+            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.03),transparent_70%)] blur-[80px] pointer-events-none -z-10"></div>
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.03),transparent_70%)] blur-[80px] pointer-events-none -z-10"></div>
+
             <div className="container mx-auto px-6">
                 
                 {/* Cabeçalho Centralizado Padronizado */}
