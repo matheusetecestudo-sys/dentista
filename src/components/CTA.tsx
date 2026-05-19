@@ -1,4 +1,5 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const CTA = () => {
@@ -37,7 +38,7 @@ const CTA = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-white/60 mt-6 text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-2xl"
+                        className="text-white/70 mt-6 text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-2xl"
                     >
                         Fale diretamente com nossa recepção pelo WhatsApp. Nossa equipe está online para tirar todas as suas dúvidas e agendar sua avaliação personalizada em poucos instantes.
                     </motion.p>
@@ -53,12 +54,12 @@ const CTA = () => {
                             href="https://wa.me/5511992876219?text=Olá! Gostaria de agendar uma avaliação na Duno."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative overflow-hidden bg-white text-[#02050A] px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-[0_10px_35px_rgba(255,255,255,0.05)] hover:shadow-[0_15px_40px_rgba(20,184,166,0.35)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 text-xs sm:text-sm border border-white/10 hover:border-teal-400/35"
+                            className="group relative overflow-hidden bg-white text-[#02050A] px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-[0_10px_35px_rgba(255,255,255,0.05)] hover:shadow-[0_15px_40px_rgba(34,197,94,0.35)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 text-xs sm:text-sm border border-white/10 hover:border-green-400/35"
                         >
-                            <MessageCircle className="w-5 h-5 text-[#02050A] group-hover:scale-110 transition-transform" />
+                            <FaWhatsapp className="w-5 h-5 text-green-500 group-hover:scale-110 transition-transform" />
                             <span className="relative z-10">Agendar Minha Consulta</span>
                             <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-                            <div className="absolute inset-0 bg-teal-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                            <div className="absolute inset-0 bg-green-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                         </a>
                     </motion.div>
 

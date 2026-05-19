@@ -38,9 +38,9 @@ const BeforeAfter = () => {
 
     return (
         <section className="bg-white py-16 sm:py-20 overflow-hidden relative" id="resultados">
-            {/* Decorações premium de fundo */}
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.03),transparent_70%)] blur-[80px] pointer-events-none -z-10"></div>
-            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.03),transparent_70%)] blur-[80px] pointer-events-none -z-10"></div>
+            {/* Decorações premium de fundo - Glows */}
+            <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.04),transparent_70%)] blur-[100px] pointer-events-none -z-10 animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.04),transparent_70%)] blur-[100px] pointer-events-none -z-10"></div>
 
             <div className="container mx-auto px-6">
                 
@@ -169,45 +169,47 @@ const BeforeAfter = () => {
 };
 
 const CaseCard = ({ item }: { item: any }) => (
-    <div className="rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_15px_45px_rgba(0,0,0,0.04)] border border-gray-100 transition-all duration-500 bg-white flex flex-col h-full group">
-        {/* Imagem em proporção perfeita (rosto completo, sem cortes) */}
-        <div className="w-full aspect-[3/2] overflow-hidden relative bg-gray-50">
-            <img 
-                src={item.img} 
-                alt={item.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103" 
-            />
-            {/* Badges Antes e Depois */}
-            <div className="absolute top-3 left-3 bg-[#02050A]/70 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md border border-white/10">
-                Antes
+    <div className="p-[1px] bg-gradient-to-br from-teal-500/10 via-transparent to-blue-500/10 rounded-[2rem] sm:rounded-[2.5rem] transition-all duration-500 hover:from-teal-400 hover:to-blue-500 group shadow-[0_15px_45px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(20,184,166,0.12)] h-full flex flex-col">
+        <div className="rounded-[1.95rem] sm:rounded-[2.45rem] overflow-hidden bg-white flex flex-col h-full flex-grow">
+            {/* Imagem em proporção perfeita (rosto completo, sem cortes) */}
+            <div className="w-full aspect-[3/2] overflow-hidden relative bg-gray-50 border-b border-gray-100">
+                <img 
+                    src={item.img} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103" 
+                />
+                {/* Badges Antes e Depois */}
+                <div className="absolute top-3.5 left-3.5 bg-[#02050A]/75 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                    Antes
+                </div>
+                <div className="absolute top-3.5 right-3.5 bg-teal-500/85 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full border border-teal-400/20 shadow-sm">
+                    Depois
+                </div>
+                {/* Divisória Vertical sutil no meio */}
+                <div className="absolute inset-y-0 left-1/2 w-px bg-white/30 pointer-events-none shadow-sm"></div>
             </div>
-            <div className="absolute top-3 right-3 bg-teal-500/80 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md border border-teal-400/20">
-                Depois
-            </div>
-            {/* Divisória Vertical sutil no meio */}
-            <div className="absolute inset-y-0 left-1/2 w-px bg-white/20 pointer-events-none shadow-sm"></div>
-        </div>
 
-        {/* Informações detalhadas e alinhadas abaixo da imagem (não obstrui o rosto) */}
-        <div className="p-6 sm:p-8 flex flex-col flex-grow justify-between bg-white">
-            <div>
-                <h3 className="text-lg sm:text-xl font-black text-[#0A1128] mb-3 leading-tight group-hover:text-teal-600 transition-colors">
-                    {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-700 font-semibold leading-relaxed mb-6">
-                    {item.desc}
-                </p>
+            {/* Informações detalhadas e alinhadas abaixo da imagem (não obstrui o rosto) */}
+            <div className="p-6 sm:p-8 flex flex-col flex-grow justify-between bg-white">
+                <div>
+                    <h3 className="text-lg sm:text-xl font-black text-[#0A1128] mb-3 leading-tight group-hover:text-teal-600 transition-colors">
+                        {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-700 font-semibold leading-relaxed mb-6">
+                        {item.desc}
+                    </p>
+                </div>
+                
+                <a 
+                    href={`https://wa.me/5511992876219?text=Olá! Gostaria de ter um resultado incrível como o do caso de ${encodeURIComponent(item.title)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-teal-50 text-teal-700 py-3.5 px-6 rounded-2xl font-bold transition-all duration-300 w-full uppercase tracking-wider text-xs sm:text-sm group-hover:bg-teal-600 group-hover:text-white"
+                >
+                    <span>Quero este Sorriso</span>
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
             </div>
-            
-            <a 
-                href={`https://wa.me/5511992876219?text=Olá! Gostaria de ter um resultado incrível como o do caso de ${encodeURIComponent(item.title)}.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-teal-50 hover:bg-teal-100 text-teal-700 py-3.5 px-6 rounded-2xl font-bold transition-colors duration-300 w-full uppercase tracking-wider text-xs sm:text-sm group-hover:bg-teal-600 group-hover:text-white"
-            >
-                <span>Quero este Sorriso</span>
-                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
         </div>
     </div>
 );

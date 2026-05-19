@@ -123,7 +123,7 @@ const Services = () => {
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-between bg-gray-50 text-[#0A1128] px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold group-hover:bg-teal-50 group-hover:text-teal-700 transition-all duration-300 w-full text-[10px] xs:text-xs sm:text-sm"
                                 >
-                                    <span>Saber Mais</span>
+                                    <span>Saiba Mais</span>
                                     <div className="bg-white p-1 sm:p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
                                         <ArrowRight className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-[#0A1128] group-hover:text-teal-600 transition-colors" />
                                     </div>
