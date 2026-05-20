@@ -53,11 +53,11 @@ const CTA = () => {
                             href="https://wa.me/5511992876219?text=Olá! Gostaria de agendar uma avaliação na Duno."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative overflow-hidden bg-white text-[#02050A] px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-[0_10px_35px_rgba(255,255,255,0.05)] hover:shadow-[0_15px_40px_rgba(20,184,166,0.35)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 text-xs sm:text-sm border border-white/10 hover:border-teal-400/35"
+                            className="group relative overflow-hidden bg-gradient-to-r from-teal-500 via-[#14b8a6] to-blue-600 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-[0_10px_30px_rgba(20,184,166,0.25)] hover:shadow-[0_15px_40px_rgba(20,184,166,0.55)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 text-xs sm:text-sm border border-teal-400/20"
                         >
                             <span className="relative z-10">Agendar Minha Consulta</span>
-                            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-                            <div className="absolute inset-0 bg-teal-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1.5 transition-transform" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#14b8a6] via-blue-500 to-[#14b8a6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                         </a>
                     </motion.div>
 

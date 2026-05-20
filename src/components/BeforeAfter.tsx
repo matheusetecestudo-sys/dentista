@@ -199,13 +199,13 @@ const CaseCard = ({ item }: { item: any }) => (
                 {item.desc}
             </p>
             
-            {/* Linha Divisória e Botão de Ação Idêntico ao Estilo dos Profissionais */}
+            {/* Linha Divisória e Botão de Ação Redesenhado */}
             <div className="pt-4 sm:pt-6 border-t border-gray-200">
                 <a 
                     href={`https://wa.me/5511992876219?text=Olá! Gostaria de ter um resultado incrível como o do caso de ${encodeURIComponent(item.title)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-white border border-gray-200 text-[#0A1128] hover:bg-[#0A1128] hover:text-white hover:border-[#0A1128] py-3.5 px-6 rounded-2xl font-bold transition-all duration-300 w-full uppercase tracking-wider text-xs sm:text-sm shadow-sm gap-2"
+                    className="inline-flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl font-bold uppercase tracking-wider text-xs sm:text-sm text-white bg-gradient-to-r from-teal-500 to-[#14b8a6] hover:from-[#14b8a6] hover:to-teal-600 shadow-[0_4px_15px_rgba(20,184,166,0.25)] hover:shadow-[0_8px_25px_rgba(20,184,166,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                 >
                     <span>Quero este Sorriso</span>
                     <ArrowRight className="w-4 h-4" />

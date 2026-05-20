@@ -112,7 +112,7 @@ const Services = () => {
                                 </div>
 
                                 {/* Descrição Resumida para Encaixe de Grade Impecável */}
-                                <p className="text-[10px] xs:text-xs sm:text-sm text-gray-700 mb-4 sm:mb-6 leading-relaxed flex-grow font-semibold line-clamp-3">
+                                <p className="text-[10px] xs:text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 leading-relaxed flex-grow font-medium line-clamp-3">
                                     {service.description}
                                 </p>
 

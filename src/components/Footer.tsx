@@ -8,11 +8,8 @@ const Footer = () => {
                     
                     {/* Brand */}
                     <div className="lg:col-span-1">
-                        <a href="#" className="text-3xl font-black tracking-tighter text-white flex items-center gap-2 mb-6">
-                            <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-blue-500 rounded-lg flex items-center justify-center shadow-lg">
-                                <span className="text-white text-xl leading-none">D</span>
-                            </div>
-                            DUNO<span className="text-teal-400">Odontologia</span>
+                        <a href="#" className="font-serif text-3xl font-black tracking-widest text-[#14b8a6] hover:opacity-90 transition-opacity mb-6 block">
+                            DUNO
                         </a>
                         <p className="text-white/50 text-sm leading-relaxed mb-8 font-medium pr-4">
                             Odontologia moderna e de alta precisão para pacientes que exigem o que há de melhor em estética e saúde bucal.
