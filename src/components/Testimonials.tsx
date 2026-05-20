@@ -37,16 +37,21 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="bg-gray-50 py-16 sm:py-20 overflow-hidden" id="depoimentos">
-            <div className="container mx-auto px-6">
+        <section className="bg-[#050B14] py-16 sm:py-24 overflow-hidden relative text-white" id="depoimentos">
+            {/* Decorações Premium de Fundo - Glows suaves para dar profundidade */}
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-5 mix-blend-overlay pointer-events-none"></div>
+            <div className="absolute top-1/4 left-10 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.06),transparent_70%)] blur-[80px] pointer-events-none z-0"></div>
+            <div className="absolute bottom-1/4 right-10 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06),transparent_70%)] blur-[100px] pointer-events-none z-0"></div>
+
+            <div className="container mx-auto px-6 relative z-10 max-w-7xl">
                 
-                {/* Cabeçalho */}
-                <div className="text-center mb-16 sm:mb-20 max-w-3xl mx-auto">
+                {/* Cabeçalho de Luxo Centralizado */}
+                <div className="text-center mb-16 sm:mb-24 max-w-3xl mx-auto">
                     <motion.span 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-teal-600 font-bold uppercase tracking-[0.2em] text-xs sm:text-sm block"
+                        className="text-[#14b8a6] font-bold uppercase tracking-[0.2em] text-xs sm:text-sm block font-sans"
                     >
                         O que dizem de nós
                     </motion.span>
@@ -55,13 +60,14 @@ const Testimonials = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0A1128] mt-4 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mt-4 tracking-tight leading-tight"
                     >
-                        A prova incontestável da nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">excelência</span>
+                        A prova de nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">excelência</span>
                     </motion.h2>
+                    <div className="w-16 h-[2px] bg-[#14b8a6] mx-auto mt-6"></div>
                 </div>
 
-                <div className="relative max-w-7xl mx-auto">
+                <div className="relative max-w-7xl mx-auto z-10">
                     {/* Grid Desktop (Escondido no mobile, exibido em md+) */}
                     <div className="hidden md:grid grid-cols-3 gap-8">
                         {reviews.map((review, index) => (
@@ -124,7 +130,7 @@ const Testimonials = () => {
                                         setDirection(idx > currentIndex ? 1 : -1);
                                         setCurrentIndex(idx);
                                     }}
-                                    className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-teal-500' : 'w-2.5 bg-gray-200'}`}
+                                    className={`h-2.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-[#14b8a6]' : 'w-2.5 bg-white/20'}`}
                                     aria-label={`Ir para slide ${idx + 1}`}
                                 />
                             ))}
@@ -132,10 +138,10 @@ const Testimonials = () => {
 
                         {/* Setas de Controle */}
                         <div className="flex justify-center gap-4 mt-8">
-                            <button onClick={prev} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                            <button onClick={prev} className="w-14 h-14 rounded-full bg-white/5 border border-white/10 text-white flex items-center justify-center hover:bg-[#14b8a6] hover:border-[#14b8a6] transition-all shadow-sm">
                                 <ChevronLeft size={20} />
                             </button>
-                            <button onClick={next} className="w-14 h-14 rounded-full bg-white border border-gray-200 text-[#0A1128] flex items-center justify-center hover:bg-teal-50 hover:text-teal-600 transition-all shadow-sm">
+                            <button onClick={next} className="w-14 h-14 rounded-full bg-white/5 border border-white/10 text-white flex items-center justify-center hover:bg-[#14b8a6] hover:border-[#14b8a6] transition-all shadow-sm">
                                 <ChevronRight size={20} />
                             </button>
                         </div>
@@ -153,27 +159,41 @@ const TestimonialCard = ({ review, delay }: { review: any, delay: number }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay }}
-        className="bg-white p-8 sm:p-12 rounded-[2rem] sm:rounded-[2.5rem] relative border border-blue-500/10 hover:border-teal-500/45 transition-all duration-500 h-full flex flex-col shadow-[0_10px_35px_rgba(59,130,246,0.02)] hover:shadow-[0_20px_50px_rgba(13,148,136,0.06)] group"
+        className="bg-white/[0.02] backdrop-blur-md p-8 sm:p-12 rounded-[2.5rem] relative border border-white/5 hover:border-[#14b8a6]/30 hover:bg-white/[0.04] transition-all duration-500 h-full flex flex-col shadow-[0_15px_45px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(20,184,166,0.1)] group overflow-hidden"
     >
-        <div className="absolute top-8 right-8 sm:top-10 sm:right-10 text-blue-50 group-hover:text-teal-100/30 transition-colors duration-500">
+        {/* Glow de fundo interno do card no hover */}
+        <div className="absolute -top-12 -right-12 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition-all duration-500 pointer-events-none"></div>
+
+        {/* Ícone de Aspas Duplas */}
+        <div className="absolute top-8 right-8 sm:top-10 sm:right-10 text-white/5 group-hover:text-[#14b8a6]/10 transition-colors duration-500 pointer-events-none">
             <Quote size={48} className="transform rotate-180" />
         </div>
 
+        {/* Estrelas com tom dourado */}
         <div className="flex gap-1.5 mb-6 sm:mb-8 relative z-10">
             {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} className="text-yellow-400 fill-current" />
+                <Star key={i} size={16} className="text-[#FBBF24] fill-current shadow-sm" />
             ))}
         </div>
 
-        <p className="text-[#0A1128] text-sm sm:text-base md:text-lg leading-relaxed flex-grow mb-8 sm:mb-12 font-semibold relative z-10">
+        {/* Depoimento em Fonte Serifada e Elegante */}
+        <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed flex-grow mb-8 sm:mb-12 font-medium italic relative z-10 font-serif">
             "{review.text}"
         </p>
 
-        <div className="flex items-center gap-4 pt-6 sm:pt-8 border-t border-gray-100 relative z-10">
-            <img src={review.avatar} alt={review.name} className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shadow-sm border-2 border-white" />
+        {/* Autor com Avatar e Glow */}
+        <div className="flex items-center gap-4 pt-6 sm:pt-8 border-t border-white/5 relative z-10">
+            <div className="relative">
+                <img 
+                    src={review.avatar} 
+                    alt={review.name} 
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shadow-lg border border-white/10" 
+                />
+                <div className="absolute inset-0 rounded-full border border-[#14b8a6]/20 group-hover:border-[#14b8a6]/50 transition-colors duration-300 pointer-events-none"></div>
+            </div>
             <div>
-                <h4 className="font-black text-[#0A1128] text-sm sm:text-base">{review.name}</h4>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-teal-600 mt-1">{review.city}</p>
+                <h4 className="font-bold text-white text-sm sm:text-base tracking-wide font-sans">{review.name}</h4>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#14b8a6] mt-1 font-sans">{review.city}</p>
             </div>
         </div>
     </motion.div>
